@@ -5,6 +5,7 @@ import { ActionButton } from '../common/ActionButton'
 import userActions from '../../http-actions/userActions'
 import { FormError } from './FormError'
 import { createEffect, createSignal, on } from 'solid-js'
+import { navigate } from 'astro:transitions/client'
 
 type RegisterForm = {
   username: string
@@ -23,7 +24,7 @@ export default function RegisterForm() {
       .createUser(values)
       .then((userAuthData) => {
         setUser(userAuthData)
-        location.assign('/todo-lists')
+        navigate('/')
       })
       .catch((error) => {
         console.log('error:', error)
@@ -34,7 +35,7 @@ export default function RegisterForm() {
   createEffect(
     on(
       () => user,
-      (user) => user && user.username && location.assign('/todos'),
+      (user) => user && user.username && navigate('/todos'),
     ),
   )
 
@@ -90,7 +91,7 @@ export default function RegisterForm() {
             loading={registerForm.submitting}
             label="To Login"
             variant="secondary"
-            onClick={() => location.assign('/login')}
+            onClick={() => navigate('/login')}
           />
           <ActionButton loading={registerForm.submitting} label="Register" variant="primary" />
         </div>

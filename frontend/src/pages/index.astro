@@ -1,17 +1,8 @@
 ---
+import BaseLayout from '../layout/BaseLayout.astro'
+import TodoListsView from '../components/todoList/TodoListsView'
 ---
 
-<!-- <BaseLayout title="Home" description="Home page"> -->
-<div class="flex h-screen flex-col items-center justify-center">
-  <h1 class="text-4xl font-bold">Redirecting...</h1>
-</div>
-<!-- </BaseLayout> -->
-
-<script is:inline>
-  const username = JSON.parse(localStorage.getItem('userData') ?? '{}')?.username
-  if (username) {
-    location.assign('/todos')
-  } else {
-    location.assign('/login')
-  }
-</script>
+<BaseLayout title="Home" description="Home page">
+  <TodoListsView client:only="solid-js" />
+</BaseLayout>

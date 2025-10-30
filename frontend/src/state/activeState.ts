@@ -7,9 +7,17 @@ export type ActiveState = {
   todoList: TodoList | null
 }
 
-export default makePersisted(
-  createStore<ActiveState>({
-    todoList: null,
-  }),
-  { name: 'activeData' },
-)
+const initState: ActiveState = {
+  todoList: null,
+}
+
+const store = makePersisted(createStore<ActiveState>(initState), {
+  name: 'activeData',
+})
+
+export const clearActiveState = () => {
+  const [, setStore] = store
+  setStore({ todoList: null })
+}
+
+export default store

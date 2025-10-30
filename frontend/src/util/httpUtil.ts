@@ -1,5 +1,6 @@
 import type { SetStoreFunction } from 'solid-js/store'
 import userState, { type User } from '../state/userState'
+import { navigate } from 'astro:transitions/client'
 
 const BASE_URL = 'http://localhost:4322'
 
@@ -17,7 +18,7 @@ const refreshAccessToken = async (
   }).then(async (response) => {
     if (!response.ok) {
       setUser({ username: null, accessToken: null, refreshToken: null })
-      location.assign('/login')
+      navigate('/login')
       throw new Error('Failed to refresh token')
     }
     return response.json()

@@ -3,57 +3,52 @@ import activeState from '../../state/activeState'
 import userState from '../../state/userState'
 import { Icon } from '@iconify-icon/solid'
 import ShareTodoListForm from '../forms/ShareTodoListForm'
-import { createEffect, createSignal } from 'solid-js'
-import type { TodoList } from '../../state/todoListState'
+import { Show } from 'solid-js'
 import dialogUtil from '../../util/dialogUtil'
-import StaticIcon from '../common/StaticIcon'
 
 const TodoListItems = () => {
   const [user, _setUser] = userState
   const [active, setActive] = activeState // not needed in restful version (TODO remove when/if done)
-  const [todoList, setTodoList] = createSignal<TodoList | null>(null)
 
-  createEffect(() => {
-    console.log('active.todoList', active.todoList)
-    if (active.todoList) {
-      setTodoList(active.todoList)
-    } else {
-      setTodoList(null)
-    }
-  })
+  const loggedInIcon = (
+    <Icon class="mr-1 align-bottom text-2xl" icon="fluent:home-20-filled" />
+  )
+
+  const loggedOutIcon = (
+    <Icon
+      class="mr-1 align-bottom text-2xl"
+      icon="fluent:person-accounts-20-filled"
+    />
+  )
 
   const shareModalId = 'share-modal'
 
   return (
     <div>
-      {user.username ? (
+      <Show
+        when={user.username}
+        fallback={
+          <NavItem
+            label={
+              <>
+                {loggedOutIcon}
+                Login or sign up to get started
+              </>
+            }
+          />
+        }
+      >
         <NavItem
           label={
             <>
-              <Icon
-                  class="mr-1 align-bottom text-2xl"
-                  icon="fluent:home-20-filled"
-              />
+              {loggedInIcon}
               My todo lists
             </>
           }
-          href="/todo-lists"
-          // onClick={() => location.assign('/todo-lists')}
+          href="/"
         />
-      ) : (
-        <NavItem
-          label={
-            <>
-              <Icon
-                class="mr-1 align-bottom text-2xl"
-                icon="fluent:person-accounts-20-filled"
-              />
-              Login or sign up to get started
-            </>
-          }
-        />
-      )}
-      {todoList() && (
+      </Show>
+      <Show when={active.todoList}>
         <>
           <NavItem
             label={
@@ -66,7 +61,7 @@ const TodoListItems = () => {
                   class="-ml-1 mr-1 align-bottom"
                   icon="fluent:edit-20-regular"
                 />
-                {todoList()?.name ?? 'Could not fetch todo list info'}
+                {active.todoList?.name ?? 'Could not fetch todo list info'}
               </>
             }
           />
@@ -89,18 +84,18 @@ const TodoListItems = () => {
             onClick={() => dialogUtil.open(shareModalId)}
           />
           <ShareTodoListForm
-            todoList={todoList()!}
+            todoList={active.todoList!}
             dialogId={shareModalId}
             onClose={() => dialogUtil.close(shareModalId)}
             onSuccess={(newMembers) => {
               setActive('todoList', {
-                ...todoList()!,
+                ...active.todoList!,
                 members: newMembers,
               })
             }}
           />
         </>
-      )}
+      </Show>
     </div>
   )
 }

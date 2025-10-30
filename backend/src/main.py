@@ -38,7 +38,7 @@ app.add_middleware(AuthenticationMiddleware,
                    backend=AuthBackend(), on_error=on_auth_error)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost', 'http://localhost:4321'],  # TODO: swithc through env
+    allow_origins=['http://localhost', 'http://localhost:4321'],  # TODO: switch through env
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['Authorization', 'Content-Type']

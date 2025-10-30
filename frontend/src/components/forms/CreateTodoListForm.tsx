@@ -73,7 +73,6 @@ export default function CreateTodoListForm(props: CreateTodoListFormProps) {
                 type="textarea"
                 value={field.value}
                 error={field.error}
-                required
               />
             </>
           )}

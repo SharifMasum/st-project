@@ -1,7 +1,16 @@
 import { createStore } from 'solid-js/store'
-import type { TodoItem } from './todoItemState'
 import type { UserDto } from '../http-actions/userActions'
 import type { TodoListMemberDto } from '../http-actions/todoActions'
+
+export type TodoItem = {
+  id: number
+  todo_list_id: number
+  author_id: number
+  description: string
+  completed: boolean
+  created: string
+  updated: string
+}
 
 export type TodoList = {
   id: number
@@ -13,4 +22,11 @@ export type TodoList = {
   todos?: TodoItem[]
 }
 
-export default createStore<TodoList[]>([])
+const store = createStore<TodoList[]>([])
+
+export const clearTodoListState = () => {
+  const [_, setTodoLists] = store
+  setTodoLists([])
+}
+
+export default store

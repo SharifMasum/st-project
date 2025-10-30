@@ -8,6 +8,7 @@ import todoActions from '../../http-actions/todoActions'
 import { IconButton } from '../common/IconButton'
 import CreateTodoListForm from '../forms/CreateTodoListForm'
 import TodoList from './TodoList'
+import { navigate } from 'astro:transitions/client'
 
 export default function TodoLists() {
   const [todoLists, setTodoLists] = todoListState
@@ -52,13 +53,13 @@ export default function TodoLists() {
 
   const handleSelectTodoList = (todoList: TodoListType) => {
     setActiveState('todoList', todoList)
-    // location.assign(`/todo-lists/${todoList.id}`)  // for restful version
+    // navigate(`/todo-lists/${todoList.id}`)  // for restful version
   }
 
   createEffect(
     on(
       () => user,
-      (user) => user && !user.username && location.assign('/login'),
+      (user) => user && !user.username && navigate('/login'),
     ),
   )
 

@@ -28,23 +28,31 @@ The application includes the following four services.
 
 ### Running the Application
 
-In the project directory, run 
+In the project directory, run
 
 ```
 docker compose up
 ```
 
-Open `localhost` in a browser.
+Open `http://localhost` in a browser.
 
 ### Development
 
-In the project directory, run 
+In the project directory, run
 
 ```
 docker compose -f compose.dev.yml up
 ```
 
-Open `localhost:4321` in a browser.
+Open `http://localhost:4321` in a browser.
 
 The development environment includes hot reloading for the frontend and backend services.
 
+### Switching between environments
+
+Once you have created the containers and want to switch the compose configuration file, the database containers should be removed. Otherwise they will be run use with the old configuration of the previous `compose up` command.
+This can be done for both configurations with
+
+```
+docker compose down --remove-orphans
+```

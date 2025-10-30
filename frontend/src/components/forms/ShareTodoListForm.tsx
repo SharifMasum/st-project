@@ -1,4 +1,9 @@
-import { createForm, required, type SubmitHandler } from '@modular-forms/solid'
+import {
+  reset,
+  createForm,
+  required,
+  type SubmitHandler,
+} from '@modular-forms/solid'
 import { ActionButton } from '../common/ActionButton'
 import userState from '../../state/userState'
 import todoActions, {
@@ -7,11 +12,10 @@ import todoActions, {
 } from '../../http-actions/todoActions'
 import userActions, { type UserDto } from '../../http-actions/userActions'
 import { FormError } from './FormError'
-import { createSignal, onMount } from 'solid-js'
+import { createSignal, onMount, Show } from 'solid-js'
 import { SelectInput } from './SelectInput'
 import '@thisbeyond/solid-select/style.css'
 import type { TodoList } from '../../state/todoListState'
-import { Icon } from '@iconify-icon/solid'
 
 type shareTodoListForm = {
   users: UserDto[]
@@ -83,9 +87,14 @@ export default function ShareTodoListForm(props: shareTodoListFormProps) {
         setSubmitError(error.message)
         setShareSuccess(false)
       })
+
+    reset(shareTodoListForm, {
+      initialValues: { users: [], role: todoListRoles()[1] },
+    })
   }
 
   const onUserSelectInput = async (input: string) => {
+    console.log('searching users with input:', input)
     input &&
       userActions.findUsers(input).then((users: UserDto[]) => {
         console.log('found users:', users)
@@ -110,42 +119,44 @@ export default function ShareTodoListForm(props: shareTodoListFormProps) {
             <div class="container prose mx-auto mb-8 w-full max-w-4xl">
               <h1>Share todo list</h1>
             </div>
-            <div class="prose mb-8 w-full px-8">
-              <div class="w-full tooltip" data-tip="Edit permissions">
-                <button 
-                  class="flex w-full justify-between rounded-lg p-2 text-lg font-semibold hover:bg-gray-600"
-                  onClick={() => console.log('edit permissions')}
-                >
-                  Shared with
-                  <div>
-                    <Icon
-                      class="ml-3 align-bottom text-2xl"
-                      // icon="fluent:task-list-20-regular"
-                      icon="fluent:person-20-regular"
-                    />
-                    <Icon
-                      class="-ml-1 mr-1 align-bottom"
-                      // icon="fluent:task-list-20-regular"
-                      icon="fluent:edit-12-regular"
-                    />
-                  </div>
-                </button>
+            <Show when={todoListMembers().length > 1}>
+              <div class="prose mb-8 w-full px-8">
+                {/*<div class="w-full tooltip" data-tip="Edit permissions">
+                  <button 
+                    class="flex w-full justify-between rounded-lg p-2 text-lg font-semibold hover:bg-gray-600"
+                    onClick={() => console.log('edit permissions')}
+                  >*/}
+                Shared with
+                {/*<div>
+                      <Icon
+                        class="ml-3 align-bottom text-2xl"
+                        // icon="fluent:task-list-20-regular"
+                        icon="fluent:person-20-regular"
+                      />
+                      <Icon
+                        class="-ml-1 mr-1 align-bottom"
+                        // icon="fluent:task-list-20-regular"
+                        icon="fluent:edit-12-regular"
+                      />
+                    </div>
+                   </button>
+                 </div>*/}
+                <ul>
+                  {todoListMembers()
+                    .filter((member) => member.user.id !== currentUser.userId)
+                    .map((member) => (
+                      <li>
+                        {member.user.username} - {member.role.name}
+                      </li>
+                    ))}
+                </ul>
               </div>
-              <ul>
-                {todoListMembers()
-                  .filter((member) => member.user.id !== currentUser.userId)
-                  .map((member) => (
-                    <li>
-                      {member.user.username} - {member.role.name}
-                    </li>
-                  ))}
-              </ul>
-            </div>
+            </Show>
           </div>
         )}
         <FormError error={submitError()} formName="shareTodoList" />
-        <Form onSubmit={handleSubmit}>
-          <Field 
+        <Form onSubmit={handleSubmit} class="prose">
+          <Field
             // @ts-ignore
             name="users"
             validate={[required('Please select at least one user.')]}
@@ -154,6 +165,7 @@ export default function ShareTodoListForm(props: shareTodoListFormProps) {
               <SelectInput
                 {...props}
                 label="Add users"
+                value={field.value}
                 onInput={onUserSelectInput}
                 onChange={(value: number[]) => {
                   console.log(value)
@@ -187,7 +199,7 @@ export default function ShareTodoListForm(props: shareTodoListFormProps) {
               />
             )}
           </Field>
-          <div class="flex justify-center semi-bold text-green-500">
+          <div class="semi-bold flex justify-center text-green-500">
             {shareSuccess() && 'Todo list shared successfully'}
           </div>
 

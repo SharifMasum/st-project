@@ -2,7 +2,6 @@ import { createForm, required, type SubmitHandler } from '@modular-forms/solid'
 import { TextInput } from './TextInput'
 import { ActionButton } from '../common/ActionButton'
 import todoActions from '../../http-actions/todoActions'
-import todoItemState from '../../state/todoItemState'
 import { FormError } from './FormError'
 import { createSignal } from 'solid-js'
 
@@ -19,7 +18,6 @@ type CreateTodoItemFormProps = {
 
 export default function CreateTodoItemForm(props: CreateTodoItemFormProps) {
   const [createTodoItemForm, { Form, Field }] = createForm<CreateTodoItemForm>()
-  const [todos, setTodos] = todoItemState
   const [submitError, setSubmitError] = createSignal<string | undefined>()
 
   const handleSubmit: SubmitHandler<CreateTodoItemForm> = (values) => {
@@ -30,7 +28,6 @@ export default function CreateTodoItemForm(props: CreateTodoItemFormProps) {
       .createTodoItem(props.todoListId, values)
       .then((newTodoItem) => {
         console.log('todo item created:', newTodoItem)
-        setTodos(todos.length, newTodoItem)
         createTodoItemForm.internal.fields.description?.value.set('')
         setSubmitError(undefined)
         props.onSuccess?.(newTodoItem)

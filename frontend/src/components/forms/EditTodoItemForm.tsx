@@ -1,7 +1,7 @@
 import { createForm, required, type SubmitHandler } from '@modular-forms/solid'
 import { TextInput } from './TextInput'
 import todoActions from '../../http-actions/todoActions'
-import todoItemState, { type TodoItem } from '../../state/todoItemState'
+import { type TodoItem } from '../../state/todoListState'
 import { FormError } from './FormError'
 import { createEffect, createSignal } from 'solid-js'
 import { IconButton } from '../common/IconButton'
@@ -25,8 +25,6 @@ type EditTodoItemFormProps = {
 }
 
 export default function EditTodoItemForm(props: EditTodoItemFormProps) {
-  const [_todoItems, setTodoItems] = todoItemState
-
   const [editTodoItemForm, { Form, Field }] = createForm<EditTodoItemForm>({
     initialValues: {
       description: props.editState.description,
@@ -48,7 +46,6 @@ export default function EditTodoItemForm(props: EditTodoItemFormProps) {
       .updateTodoItem(props.todoItem.todo_list_id, props.todoItem.id, values)
       .then((updatedTodoItem) => {
         console.log('todo item edited:', updatedTodoItem)
-        setTodoItems(props.todoItemIndex, updatedTodoItem)
         editTodoItemForm.internal.fields.description?.value.set('')
         setSubmitError(undefined)
         props.onSuccess(updatedTodoItem)

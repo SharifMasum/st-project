@@ -8,12 +8,23 @@ export type User = {
   refreshToken: string | null
 }
 
-export default makePersisted(
-  createStore<User>({
+const initState: User = {
+  userId: null,
+  username: null,
+  accessToken: null,
+  refreshToken: null,
+}
+
+const store = makePersisted(createStore<User>(initState), { name: 'userData' })
+
+export const clearUserState = () => {
+  const [_, setUser] = store
+  setUser({
     userId: null,
     username: null,
     accessToken: null,
     refreshToken: null,
-  }),
-  { name: 'userData' },
-)
+  })
+}
+
+export default store

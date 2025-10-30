@@ -8,15 +8,15 @@ import {
 } from 'solid-js'
 
 import userState from '../../state/userState'
-import todoItemState from '../../state/todoItemState'
 import activeState from '../../state/activeState'
 import todoActions from '../../http-actions/todoActions'
 import { IconButton } from '../common/IconButton'
 import CreateTodoItemForm from '../forms/CreateTodoItemForm'
-import { type TodoItem as TodoItemType } from '../../state/todoItemState'
+import { type TodoItem as TodoItemType } from '../../state/todoListState'
 import TodoItem from './TodoItem'
 import { editTodoListWs } from '../../web-sockets/todoWs'
 import { Icon } from '@iconify-icon/solid'
+import { navigate } from 'astro:transitions/client'
 
 type TodoListProps = {
   todoListId?: number // For restful version (TODO)
@@ -24,7 +24,7 @@ type TodoListProps = {
 
 export default function TodoList(props: TodoListProps) {
   const [active, setActive] = activeState // not needed in restful version (TODO remove when/if done)
-  const [todoItems, setTodoItems] = todoItemState
+  const [todoItems, setTodoItems] = createSignal<TodoItemType[]>([])
   const [user, _setUser] = userState
   const [showCreateTodoItemForm, setShowCreateTodoItemForm] =
     createSignal(false)
@@ -32,7 +32,7 @@ export default function TodoList(props: TodoListProps) {
   const [ws, setWs] = createSignal<WebSocket | undefined>(undefined)
   const [todoItemEditState, setTodoItemEditState] = createSignal<{
     [index: number]: { description: string } | undefined
-  }>(Object.fromEntries(todoItems.map((_, index) => [index, undefined])))
+  }>(Object.fromEntries(todoItems().map((_, index) => [index, undefined])))
 
   console.log('tiEditState', todoItemEditState())
 
@@ -95,30 +95,33 @@ export default function TodoList(props: TodoListProps) {
             todoActions
               .fetchTodoItem(todoListId!, createdTodoItemId)
               .then((todoItem) => {
-                todoItem && setTodoItems([...todoItems, todoItem])
+                todoItem && setTodoItems([...todoItems(), todoItem])
               })
           }
 
           if (message.action === 'todo_item_delete') {
             const deletedTodoItemId = message.todo_item_id
+            console.log('deleting todo item with id:', deletedTodoItemId)
             setTodoItems(
-              todoItems.filter((todoItem) => todoItem.id !== deletedTodoItemId),
+              todoItems().filter(
+                (todoItem) => todoItem.id !== deletedTodoItemId,
+              ),
             )
           }
 
           if (message.action === 'todo_item_open_for_editing') {
-            const index = todoItems.findIndex(
+            const index = todoItems().findIndex(
               (todoItem) => todoItem.id === message.todo_item_id,
             )
             setTodoItemEditState({
               ...todoItemEditState(),
-              [index]: { description: todoItems[index].description },
+              [index]: { description: todoItems()[index].description },
             })
           }
 
           if (message.action === 'todo_item_edit_description') {
             console.log('todo_item_edit_description', message)
-            const index = todoItems.findIndex(
+            const index = todoItems().findIndex(
               (todoItem) => todoItem.id === message.todo_item_id,
             )
             setTodoItemEditState({
@@ -128,7 +131,7 @@ export default function TodoList(props: TodoListProps) {
           }
 
           if (message.action === 'todo_item_close_editing') {
-            const index = todoItems.findIndex(
+            const index = todoItems().findIndex(
               (todoItem) => todoItem.id === message.todo_item_id,
             )
             setTodoItemEditState({
@@ -138,7 +141,7 @@ export default function TodoList(props: TodoListProps) {
           }
 
           if (message.action === 'todo_item_update') {
-            const index = todoItems.findIndex(
+            const index = todoItems().findIndex(
               (todoItem) => todoItem.id === message.todo_item_id,
             )
             setTodoItemEditState({
@@ -148,7 +151,11 @@ export default function TodoList(props: TodoListProps) {
             todoActions
               .fetchTodoItem(todoListId!, message.todo_item_id)
               .then((updatedTodoItem) => {
-                setTodoItems(index, updatedTodoItem)
+                setTodoItems((prevTodoItems) =>
+                  prevTodoItems.map((todoItem, i) =>
+                    i === index ? updatedTodoItem : todoItem,
+                  ),
+                )
               })
           }
         }
@@ -177,13 +184,19 @@ export default function TodoList(props: TodoListProps) {
   }
 
   const toggleTodoItemComplete = (index: number) => {
-    const todoItem = todoItems[index]
+    const todoItem = todoItems()[index]
     todoActions
       .updateTodoItem(todoListId!, todoItem.id, {
         completed: !todoItem.completed,
       })
       .then(() => {
-        setTodoItems(index, { ...todoItem, completed: !todoItem.completed })
+        setTodoItems((prevTodoItems) =>
+          prevTodoItems.map((todoItem, i) =>
+            i === index
+              ? { ...todoItem, completed: !todoItem.completed }
+              : todoItem,
+          ),
+        )
         ws()?.send(
           JSON.stringify({
             action: 'todo_item_update',
@@ -195,34 +208,39 @@ export default function TodoList(props: TodoListProps) {
 
   const deleteTodoItem = (index: number) => {
     console.log('deleteTodoItem', index)
-    console.log('todoItems', todoItems)
-    todoActions.deleteTodoItem(todoListId!, todoItems[index].id).then(() => {
-      setTodoItems(todoItems.filter((_, i) => i !== index))
+    console.log('todoItems()', todoItems())
+    todoActions.deleteTodoItem(todoListId!, todoItems()[index].id).then(() => {
+      const toDeletedTodoItemId = todoItems()[index].id
+      setTodoItems((todoItems) => todoItems.filter((_, i) => i !== index))
       ws()?.send(
         JSON.stringify({
           action: 'todo_item_delete',
-          todo_item_id: todoItems[index].id,
+          todo_item_id: toDeletedTodoItemId,
         }),
       )
     })
   }
 
-  const updateTodoItem = (index: number, todoItem: TodoItemType) => {
+  const updateTodoItem = (index: number, updatedTodoItem: TodoItemType) => {
     setTodoItemEditState({
       ...todoItemEditState(),
       [index]: undefined,
     })
-    setTodoItems(index, todoItem)
+    setTodoItems((prevTodoItems) =>
+      prevTodoItems.map((todoItem, i) =>
+        i === index ? updatedTodoItem : todoItem,
+      ),
+    )
     ws()?.send(
       JSON.stringify({
         action: 'todo_item_update',
-        todo_item_id: todoItem.id,
+        todo_item_id: updatedTodoItem.id,
       }),
     )
   }
 
   const cloneTodoItem = (index: number) => {
-    const todoItem = todoItems[index]
+    const todoItem = todoItems()[index]
     todoActions
       .cloneTodoItem(todoListId!, todoItem.id)
       .then((clonedTodoItem) => {
@@ -232,14 +250,14 @@ export default function TodoList(props: TodoListProps) {
             todo_item_id: clonedTodoItem.id,
           }),
         )
-        setTodoItems(todoItems.length, clonedTodoItem)
+        setTodoItems([...todoItems(), clonedTodoItem])
       })
   }
 
   createEffect(
     on(
       () => user,
-      (user) => user && !user.username && location.assign('/login'),
+      (user) => user && !user.username && navigate('/login'),
     ),
   )
 
@@ -268,14 +286,13 @@ export default function TodoList(props: TodoListProps) {
         setWs(editTodoListWs(user, todoListId))
       }
     } else {
-      location.assign('/todo-lists')
+      navigate('/')
     }
   })
 
   onCleanup(() => {
     console.log('cleaning up todo list view')
     setActive('todoList', null)
-    setTodoItems([])
     ws()?.close()
   })
 
@@ -328,6 +345,7 @@ export default function TodoList(props: TodoListProps) {
                 <CreateTodoItemForm
                   todoListId={active.todoList?.id!}
                   onSuccess={(createdTodoItem) => {
+                    setTodoItems([...todoItems(), createdTodoItem])
                     setShowCreateTodoItemForm(false)
                     ws()?.send(
                       JSON.stringify({
@@ -352,7 +370,7 @@ export default function TodoList(props: TodoListProps) {
               )}
             </div>
             <div class="over container mt-16 w-full max-w-full">
-              <For each={todoItems}>
+              <For each={todoItems()}>
                 {(todoItem, index) => (
                   <TodoItem
                     todoItem={todoItem}

@@ -1,5 +1,5 @@
 # build stage
-FROM python:3.12-alpine as builder
+FROM python:3.12-alpine AS builder
 
 WORKDIR /srv
 
@@ -15,7 +15,7 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-root && rm -rf $POETRY_CACHE_DIR
 
 # runtime 
-FROM python:3.12-alpine as runtime
+FROM python:3.12-alpine AS runtime
 
 WORKDIR /app
 

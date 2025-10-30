@@ -22,7 +22,7 @@ services:
     env_file:
       - database/.prod.env
     # volumes: # uncomment these two lines to persist database container data after removing the container
-    #   - ./database/psql_data:/var/lib/postgresql/data 
+    #   - ./database/psql_data:/var/lib/postgresql/data
     ports:
       - '5431:5432'
     healthcheck:
@@ -31,12 +31,12 @@ services:
       timeout: 1s
       retries: 15
   database-migration:
-    build: database/migration/
+    image: flyway/flyway:9.0.4-alpine # Old alpine images are smaller and have enough features for our needs, 9.x comes with multi-arch support
     env_file:
       - database/.prod.env
     depends_on:
       database:
         condition: service_healthy
     volumes:
-      - ./database/migration/sql:/migration/sql
-    command: "migrate -e DATABASE_URL -p /migration/sql"
+      - ./database/migration/sql:/flyway/sql
+    command: -connectRetries=60 -baselineOnMigrate=true migrate

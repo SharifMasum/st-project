@@ -1,5 +1,5 @@
 import { IconButton } from '../common/IconButton'
-import type { TodoItem as TodoItemType } from '../../state/todoItemState'
+import type { TodoItem as TodoItemType } from '../../state/todoListState'
 import EditTodoItemForm, { type TodoItemEditState } from '../forms/EditTodoItemForm'
 
 
@@ -16,9 +16,7 @@ type TodoItemProps = {
 }
 
 const TodoItem = (props: TodoItemProps) => {
-  const { todoItem, index } = props
-
-  console.log('editState', props.editState)
+   const { todoItem } = props
 
   return (
     <div
@@ -29,20 +27,20 @@ const TodoItem = (props: TodoItemProps) => {
     >
       {props.editState ? (
         <EditTodoItemForm
-          todoItemIndex={index}
+          todoItemIndex={props.index}
           todoItem={todoItem}
           editState={props.editState}
           onSuccess={(updatedTodoItem) => {
-            props.update(index, updatedTodoItem)
+            props.update(props.index, updatedTodoItem)
           }}
-          onInput={(value) => props.updateEditState(index, {description: value})}
-          onClose={() => props.updateEditState(index, undefined)}
+          onInput={(value) => props.updateEditState(props.index, {description: value})}
+          onClose={() => props.updateEditState(props.index, undefined)}
         />
       ) : (
         <>
           <span
             class="scroll-ms-4 overflow-x-auto whitespace-pre-wrap text-xl"
-            onClick={() => props.toggleComplete(index)}
+            onClick={() => props.toggleComplete(props.index)}
           >
             {todoItem.description}
           </span>
@@ -50,17 +48,17 @@ const TodoItem = (props: TodoItemProps) => {
             <IconButton
               icon="fluent:copy-20-regular"
               iconClass="text-sky-700"
-              onClick={() => props.clone(index)}
+              onClick={() => props.clone(props.index)}
             />
             <IconButton
               icon="fluent:edit-20-regular"
               iconClass="text-yellow-600"
-              onClick={() => props.updateEditState(index, {description: todoItem.description})}
+              onClick={() => props.updateEditState(props.index, {description: todoItem.description})}
             />
             <IconButton
               icon="fluent:delete-20-regular"
               iconClass="text-orange-800"
-              onClick={() => props.delete(index)}
+              onClick={() => props.delete(props.index)}
             />
           </div>
         </>

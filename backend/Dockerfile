@@ -1,5 +1,5 @@
 # build stage
-FROM python:3.12-alpine as builder
+FROM python:3.12-alpine AS builder
 
 WORKDIR /srv
 
@@ -8,14 +8,14 @@ ENV POETRY_NO_INTERACTION=1 \
     POETRY_VIRTUALENVS_CREATE=1 \
     POETRY_CACHE_DIR=/tmp/poetry_cache
 
-RUN pip install poetry==1.8.2
+RUN pip install poetry==2.1.3
 
 COPY pyproject.toml poetry.lock ./
 
 RUN poetry install --no-root && rm -rf $POETRY_CACHE_DIR
 
 # runtime 
-FROM python:3.12-alpine as runtime
+FROM python:3.12-alpine AS runtime
 
 WORKDIR /app
 

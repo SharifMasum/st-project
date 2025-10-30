@@ -4,6 +4,7 @@ import { InputError } from './InputError'
 import { InputLabel } from './InputLabel'
 import { Icon } from '@iconify-icon/solid'
 import { Select, type CreateSelectValue } from '@thisbeyond/solid-select'
+import './select-input.css'
 
 type SelectProps = {
   ref: (element: HTMLSelectElement) => void
@@ -32,6 +33,7 @@ type SelectProps = {
 export function SelectInput(props: SelectProps) {
   // Split select element props
   const [, selectProps] = splitProps(props, ['ref', 'onInput', 'class', 'value', 'label', 'error'])
+  console.log('SelectInput render', props.name)
 
   return (
     <div class={clsx('px-8 lg:px-10', props.class)}>
@@ -40,11 +42,10 @@ export function SelectInput(props: SelectProps) {
         <Select
           {...selectProps}
           class={clsx(
-            'w-full appearance-none space-y-2 rounded-2xl border-2 bg-transparent outline-none md:text-lg lg:space-y-3 lg:text-xl',
+            'select-input w-full appearance-none space-y-2 placeholder:text-slate-500 rounded-2xl border-2 bg-transparent outline-none md:text-lg lg:space-y-3 lg:text-xl',
             props.error
-              ? 'border-red-600/50 dark:border-red-400/50'
-              : 'border-slate-200 hover:border-slate-300 focus:border-sky-600/50 dark:border-slate-800 dark:hover:border-slate-700 dark:focus:border-sky-400/50',
-            props.placeholder && !props.value?.length && 'text-slate-500',
+              ? 'select-input-error'
+              : '',
           )}
           onInput={props.onInput}
           initialValue={props.value}
