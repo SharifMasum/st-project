@@ -1,0 +1,2198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.0 on win32)" generated="2025-12-27T09:28:40.768316" rpa="false" schemaversion="5">
+<suite id="s1" name="Auth &amp; Lists">
+<suite id="s1-s1" name="Auth" source="D:\JAMK\Software Testing\project\test\e2e-tests\tests\auth.robot">
+<kw name="Open App" owner="app" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-12-27T09:28:41.602459" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\traces\\7b3ea870-0320-446d-b92b-491453004b65"}</msg>
+<msg time="2025-12-27T09:28:41.822812" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\traces\\7b3ea870-0320-446d-b92b-491453004b65"}</msg>
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-12-27T09:28:41.602459" elapsed="0.220353"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-12-27T09:28:41.824811" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-12-27T09:28:41.847812" level="INFO">Successfully created context. </msg>
+<msg time="2025-12-27T09:28:41.847812" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<arg>viewport={'width': 1280, 'height': 720}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-12-27T09:28:41.822812" elapsed="0.025000"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-12-27T09:28:42.096701" level="INFO">Successfully initialized new page object and opened url: http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-12-27T09:28:41.847812" elapsed="0.248889"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2025-12-27T09:28:42.118093" level="INFO">Set timeout to: 20000</msg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.097716" elapsed="0.020377"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:28:42.219448" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.118093" elapsed="0.101355"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:28:41.601460" elapsed="0.618986"/>
+</kw>
+<test id="s1-s1-t1" name="Register To The Application" line="8">
+<kw name="Ensure Logged Out" owner="app" type="SETUP">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:28:42.295094" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.235443" elapsed="0.059651"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:28:42.353762" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.296089" elapsed="0.057673"/>
+</kw>
+<msg time="2025-12-27T09:28:42.353762" level="INFO">${status} = PASS</msg>
+<msg time="2025-12-27T09:28:42.354760" level="INFO">${msg} = None</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.295094" elapsed="0.059666"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="PASS" start="2025-12-27T09:28:42.354760" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-12-27T09:28:42.354760" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:28:42.354760" elapsed="0.000000"/>
+</if>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Click</arg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-12-27T09:28:42.355761" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Click</arg>
+<arg>${LINK_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-12-27T09:28:42.355761" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2025-12-27T09:28:42.355761" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-12-27T09:28:42.356762" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:28:42.235443" elapsed="0.121319"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:28:42.358763" level="INFO">${ts} = 1766820522</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.357767" elapsed="0.000996"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:28:42.358763" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:28:42.359760" level="INFO">${u} = user-1766820522</msg>
+<var>${u}</var>
+<arg>user</arg>
+<status status="PASS" start="2025-12-27T09:28:42.357767" elapsed="0.001993"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-27T09:28:42.359760" level="INFO">${pw} = TestPass123!</msg>
+<var>${pw}</var>
+<arg>TestPass123!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.359760" elapsed="0.000000"/>
+</kw>
+<kw name="Register User" owner="app">
+<kw name="Go To Register" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:28:42.361768" level="INFO">Clicks the element 'css=button:has-text("To Registration")'.</msg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.361768" elapsed="0.296695"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.361768" elapsed="0.296695"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:28:42.659463" level="INFO">Clicks the element 'css=a[href="/register"]'.</msg>
+<msg time="2025-12-27T09:29:02.789332" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:29:02.789332" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:29:02.790295" level="FAIL">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  -   element is not stable[22m
+[2m  - retrying click action, attempt #1[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LINK_REGISTER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:28:42.659463" elapsed="20.133868">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  -   element is not stable[22m
+[2m  - retrying click action, attempt #1[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_REGISTER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:28:42.658463" elapsed="20.134868"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:29:02.800338" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:29:02.793331" elapsed="0.008006"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:28:42.360762" elapsed="20.440575"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:29:02.801337" level="INFO">Fills the text 'user-1766820522' in the given field.</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:29:02.801337" elapsed="0.019958"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:29:02.822293" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${REG_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:29:02.821295" elapsed="0.020018"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:29:02.842303" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<msg time="2025-12-27T09:29:22.987926" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:29:22.987926" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:29:22.987926" level="FAIL">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:29:02.841313" elapsed="20.147618">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Fill Text</arg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:29:02.841313" elapsed="20.147618"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${REG_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:29:22.988931" elapsed="0.021647"/>
+</kw>
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:29:23.059617" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.010578" elapsed="0.049039"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:29:23.129123" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.060615" elapsed="0.069507"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:29:23.138641" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.130122" elapsed="0.009524"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:29:23.010578" elapsed="0.129068"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:28:42.360762" elapsed="40.778884"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:28:42.220446" elapsed="40.920197"/>
+</test>
+<test id="s1-s1-t2" name="Log In To The Application" line="13">
+<kw name="Ensure Logged Out" owner="app" type="SETUP">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:29:23.205693" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.153641" elapsed="0.052052"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:29:23.243291" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.206696" elapsed="0.036595"/>
+</kw>
+<msg time="2025-12-27T09:29:23.244293" level="INFO">${status} = PASS</msg>
+<msg time="2025-12-27T09:29:23.244293" level="INFO">${msg} = None</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.206696" elapsed="0.037597"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="PASS" start="2025-12-27T09:29:23.244293" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-12-27T09:29:23.244293" elapsed="0.000994"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:29:23.244293" elapsed="0.000994"/>
+</if>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Click</arg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-12-27T09:29:23.245287" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Click</arg>
+<arg>${LINK_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-12-27T09:29:23.245287" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2025-12-27T09:29:23.245287" elapsed="0.001000"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-12-27T09:29:23.246287" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:29:23.152637" elapsed="0.093650"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:29:23.247289" level="INFO">${ts} = 1766820563</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.247289" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:29:23.247289" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:29:23.247289" level="INFO">${u} = user-1766820563</msg>
+<var>${u}</var>
+<arg>user</arg>
+<status status="PASS" start="2025-12-27T09:29:23.246287" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-27T09:29:23.248287" level="INFO">${pw} = TestPass123!</msg>
+<var>${pw}</var>
+<arg>TestPass123!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.248287" elapsed="0.000000"/>
+</kw>
+<kw name="Register User" owner="app">
+<kw name="Go To Register" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:29:23.250284" level="INFO">Clicks the element 'css=button:has-text("To Registration")'.</msg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.249288" elapsed="0.342506"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.249288" elapsed="0.343469"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:29:23.593758" level="INFO">Clicks the element 'css=a[href="/register"]'.</msg>
+<msg time="2025-12-27T09:29:43.700472" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:29:43.700472" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:29:43.701502" level="FAIL">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LINK_REGISTER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:29:23.592757" elapsed="20.109740">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_REGISTER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:29:23.592757" elapsed="20.109740"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:29:43.709461" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:29:43.702497" elapsed="0.008002"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:29:23.249288" elapsed="20.461211"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:29:43.710499" level="INFO">Fills the text 'user-1766820563' in the given field.</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:29:43.710499" elapsed="0.015963"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:29:43.727493" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${REG_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:29:43.726462" elapsed="0.015051"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:29:43.742479" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<msg time="2025-12-27T09:30:03.850734" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-4.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-4.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:30:03.850734" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:30:03.850734" level="FAIL">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:29:43.742479" elapsed="20.109255">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Fill Text</arg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:29:43.741513" elapsed="20.110221"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${REG_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:03.851734" elapsed="0.016977"/>
+</kw>
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:03.914565" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:03.869737" elapsed="0.044828"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:03.982167" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:03.914565" elapsed="0.067602"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:03.989854" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:03.983196" elapsed="0.006658"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:03.869737" elapsed="0.121116"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:29:23.248287" elapsed="40.742566"/>
+</kw>
+<kw name="Login" owner="app">
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:04.037360" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:03.992852" elapsed="0.044508"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:04.097417" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.038358" elapsed="0.059059"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:04.107754" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.097417" elapsed="0.010337"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:03.991870" elapsed="0.116507"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:04.108920" level="INFO">Fills the text 'user-1766820563' in the given field.</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.108377" elapsed="0.015838"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:04.125219" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.124215" elapsed="0.015533"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:04.141746" level="INFO">Clicks the element 'css=button:has-text("Login")'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.140745" elapsed="0.317373"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.140745" elapsed="0.317373"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.459120" elapsed="0.019004"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Logged In" owner="app">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:04.705081" level="INFO">Waited for Element with selector css=input[name="username"] at state detached</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>detached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.479123" elapsed="0.226955"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:04.479123" elapsed="0.226955"/>
+</kw>
+<arg>15x</arg>
+<arg>1s</arg>
+<arg>Should Be Logged In</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.479123" elapsed="0.226955"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:30:03.991870" elapsed="0.714208"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:04.721292" level="INFO">Waited for Element with selector css=a[href="/login"]:has-text("Logout") at state visible</msg>
+<arg>${LINK_LOGOUT}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.707079" elapsed="0.014213"/>
+</kw>
+<arg>Wait For Elements State</arg>
+<arg>${LINK_LOGOUT}</arg>
+<arg>visible</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.707079" elapsed="0.014213"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:29:23.148116" elapsed="41.574176"/>
+</test>
+<test id="s1-s1-t3" name="Log Out From The Application" line="21">
+<kw name="Ensure Logged Out" owner="app" type="SETUP">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:04.789282" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.740328" elapsed="0.048954"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:06.913459" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-5.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-5.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:30:06.914381" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:30:06.914381" level="FAIL">TimeoutError: locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="username"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-12-27T09:30:04.790277" elapsed="2.125104">TimeoutError: locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="username"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<msg time="2025-12-27T09:30:06.915381" level="INFO">${status} = FAIL</msg>
+<msg time="2025-12-27T09:30:06.915381" level="INFO">${msg} = TimeoutError: locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="username"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or...</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:04.790277" elapsed="2.125104"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="NOT RUN" start="2025-12-27T09:30:06.915381" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-12-27T09:30:06.915381" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:30:06.915381" elapsed="0.000000"/>
+</if>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:06.916381" level="FAIL">Variable '${BTN_LOGOUT}' not found.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:30:06.915381" elapsed="0.001000">Variable '${BTN_LOGOUT}' not found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:06.915381" elapsed="0.001999"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:06.917380" level="INFO">Clicks the element 'css=a[href="/login"]:has-text("Logout")'.</msg>
+<arg>${LINK_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:06.917380" elapsed="0.045972"/>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:06.917380" elapsed="0.045972"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:07.005123" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:06.963352" elapsed="0.042767"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:07.080367" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:07.006119" elapsed="0.074248"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:04.739184" elapsed="2.341183"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:30:07.082370" level="INFO">${ts} = 1766820607</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:30:07.082370" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:30:07.083375" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:30:07.083375" level="INFO">${u} = user-1766820607</msg>
+<var>${u}</var>
+<arg>user</arg>
+<status status="PASS" start="2025-12-27T09:30:07.081371" elapsed="0.002004"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-27T09:30:07.084367" level="INFO">${pw} = TestPass123!</msg>
+<var>${pw}</var>
+<arg>TestPass123!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-27T09:30:07.084367" elapsed="0.000000"/>
+</kw>
+<kw name="Register User" owner="app">
+<kw name="Go To Register" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:07.086362" level="INFO">Clicks the element 'css=button:has-text("To Registration")'.</msg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:07.086362" elapsed="0.296155"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:07.086362" elapsed="0.296155"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:07.384531" level="INFO">Clicks the element 'css=a[href="/register"]'.</msg>
+<msg time="2025-12-27T09:30:27.496950" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-6.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-6.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:30:27.497989" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:30:27.497989" level="FAIL">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LINK_REGISTER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:30:07.383483" elapsed="20.115505">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_REGISTER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:07.383483" elapsed="20.115505"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:27.506951" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:27.498988" elapsed="0.007963"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:07.085361" elapsed="20.421590"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:27.507987" level="INFO">Fills the text 'user-1766820607' in the given field.</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:27.506951" elapsed="0.015000"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:27.522978" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${REG_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:27.521951" elapsed="0.014665"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:27.537619" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<msg time="2025-12-27T09:30:47.645336" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-7.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-7.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:30:47.646337" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:30:47.646337" level="FAIL">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:30:27.536616" elapsed="20.110751">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Fill Text</arg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:27.536616" elapsed="20.110751"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${REG_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.647367" elapsed="0.016967"/>
+</kw>
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:47.718874" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.665337" elapsed="0.053537"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:47.779612" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.719877" elapsed="0.059735"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:47.787614" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.779612" elapsed="0.008002"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:47.665337" elapsed="0.123318"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:30:07.085361" elapsed="40.703294"/>
+</kw>
+<kw name="Login" owner="app">
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:47.833804" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.790636" elapsed="0.043168"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:47.896437" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.834805" elapsed="0.061632"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:47.903437" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.897437" elapsed="0.006512"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:47.790636" elapsed="0.113313"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:47.904959" level="INFO">Fills the text 'user-1766820607' in the given field.</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.903949" elapsed="0.016010"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:30:47.920959" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.919959" elapsed="0.014544"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:47.935503" level="INFO">Clicks the element 'css=button:has-text("Login")'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.934503" elapsed="0.308522"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:47.934503" elapsed="0.308522"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:48.243025" elapsed="0.019489"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Logged In" owner="app">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:48.487173" level="INFO">Waited for Element with selector css=input[name="username"] at state detached</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>detached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:48.264503" elapsed="0.222670"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:48.263933" elapsed="0.223240"/>
+</kw>
+<arg>15x</arg>
+<arg>1s</arg>
+<arg>Should Be Logged In</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:30:48.263424" elapsed="0.224745"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:30:47.789621" elapsed="0.698548"/>
+</kw>
+<kw name="Logout Via UI" owner="app">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:48.489171" level="INFO">Clicks the element 'css=a[href="/login"]:has-text("Logout")'.</msg>
+<arg>${LINK_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:48.489171" elapsed="0.513481"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:49.049383" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.002652" elapsed="0.046731"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:49.113383" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.051387" elapsed="0.061996"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:48.488169" elapsed="0.625214"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:04.733201" elapsed="44.381197"/>
+</test>
+<kw name="Close App" owner="app" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-12-27T09:30:49.227757" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.124389" elapsed="0.103368"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:49.123394" elapsed="0.104363"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:28:40.794290" elapsed="128.434468"/>
+</suite>
+<suite id="s1-s2" name="Lists" source="D:\JAMK\Software Testing\project\test\e2e-tests\tests\lists.robot">
+<kw name="Open App" owner="app" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-12-27T09:30:49.264475" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\traces\\6f75003f-6171-4d2f-9d40-77fb924aac6f"}</msg>
+<msg time="2025-12-27T09:30:49.474497" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\traces\\6f75003f-6171-4d2f-9d40-77fb924aac6f"}</msg>
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.263478" elapsed="0.211019"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-12-27T09:30:49.476493" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-12-27T09:30:49.489494" level="INFO">Successfully created context. </msg>
+<msg time="2025-12-27T09:30:49.489494" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<arg>viewport={'width': 1280, 'height': 720}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.474497" elapsed="0.015998"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-12-27T09:30:49.711610" level="INFO">Successfully initialized new page object and opened url: http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.490495" elapsed="0.221115"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2025-12-27T09:30:49.720135" level="INFO">Set timeout to: 20000</msg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.712613" elapsed="0.007522"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:49.824221" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.720135" elapsed="0.104086"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:49.263478" elapsed="0.560743"/>
+</kw>
+<test id="s1-s2-t1" name="Create And Delete Todo Lists" line="8">
+<kw name="Ensure Logged Out" owner="app" type="SETUP">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:30:49.882738" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.831221" elapsed="0.052522"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:30:49.944739" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.883743" elapsed="0.060996"/>
+</kw>
+<msg time="2025-12-27T09:30:49.944739" level="INFO">${status} = PASS</msg>
+<msg time="2025-12-27T09:30:49.944739" level="INFO">${msg} = None</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.883743" elapsed="0.060996"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="PASS" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</if>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Click</arg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<arg>Click</arg>
+<arg>${LINK_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="NOT RUN" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-12-27T09:30:49.945737" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:49.830221" elapsed="0.116514"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:30:49.947737" level="INFO">${ts} = 1766820649</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.946735" elapsed="0.001002"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:30:49.947737" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:30:49.947737" level="INFO">${u} = user-1766820649</msg>
+<var>${u}</var>
+<arg>user</arg>
+<status status="PASS" start="2025-12-27T09:30:49.946735" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-27T09:30:49.947737" level="INFO">${pw} = TestPass123!</msg>
+<var>${pw}</var>
+<arg>TestPass123!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.947737" elapsed="0.000000"/>
+</kw>
+<kw name="Register User" owner="app">
+<kw name="Go To Register" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:49.949737" level="INFO">Clicks the element 'css=button:has-text("To Registration")'.</msg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.948740" elapsed="0.284994"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:49.948740" elapsed="0.284994"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:30:50.234737" level="INFO">Clicks the element 'css=a[href="/register"]'.</msg>
+<msg time="2025-12-27T09:31:10.351707" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-8.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-8.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:31:10.352743" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:31:10.352743" level="FAIL">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  -   element is not stable[22m
+[2m  - retrying click action, attempt #1[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LINK_REGISTER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:30:50.233734" elapsed="20.120014">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  -   element is not stable[22m
+[2m  - retrying click action, attempt #1[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_REGISTER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:30:50.233734" elapsed="20.120014"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:10.360720" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:10.353748" elapsed="0.006972"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:49.948740" elapsed="20.411980"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:10.361736" level="INFO">Fills the text 'user-1766820649' in the given field.</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:10.360720" elapsed="0.015987"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:10.377706" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${REG_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:10.376707" elapsed="0.018030"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:10.395724" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<msg time="2025-12-27T09:31:30.522338" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-9.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-9.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:31:30.523344" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:31:30.523344" level="FAIL">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:31:10.395724" elapsed="20.128616">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Fill Text</arg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:10.395724" elapsed="20.128616"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${REG_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.525377" elapsed="0.015960"/>
+</kw>
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:31:30.593325" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.542341" elapsed="0.051983"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:30.661571" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.594324" elapsed="0.067247"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:30.669572" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.662572" elapsed="0.007000"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:30.542341" elapsed="0.127231"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:30:49.948740" elapsed="40.722360"/>
+</kw>
+<kw name="Login" owner="app">
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:31:30.721408" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.673116" elapsed="0.048292"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:30.776485" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.721408" elapsed="0.056080"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:30.788007" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.777488" elapsed="0.010519"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:30.672115" elapsed="0.115892"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:30.789015" level="INFO">Fills the text 'user-1766820649' in the given field.</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.788007" elapsed="0.016010"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:30.805016" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.804017" elapsed="0.013210"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:30.818228" level="INFO">Clicks the element 'css=button:has-text("Login")'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.817227" elapsed="0.335576"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:30.817227" elapsed="0.335576"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:31.153793" elapsed="0.024527"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Logged In" owner="app">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:31.399630" level="INFO">Waited for Element with selector css=input[name="username"] at state detached</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>detached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:31.179318" elapsed="0.220312"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:31.178320" elapsed="0.221310"/>
+</kw>
+<arg>15x</arg>
+<arg>1s</arg>
+<arg>Should Be Logged In</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:31:31.178320" elapsed="0.221310"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:31:30.671100" elapsed="0.728530"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:31:31.401624" level="INFO">${ts} = 1766820691</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:31:31.401624" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:31:31.402624" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:31:31.402624" level="INFO">${list} = List-1766820691</msg>
+<var>${list}</var>
+<arg>List</arg>
+<status status="PASS" start="2025-12-27T09:31:31.400659" elapsed="0.001965"/>
+</kw>
+<kw name="Create List" owner="app">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Open New List Form" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:32.029819" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-10.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-10.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:31:32.029819" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:31:32.029819" level="FAIL">TimeoutError: locator.waitFor: Timeout 500ms exceeded.
+Call log:
+  [2m- waiting for locator('input#name') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>visible</arg>
+<arg>timeout=500ms</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-12-27T09:31:31.404659" elapsed="0.626805">TimeoutError: locator.waitFor: Timeout 500ms exceeded.
+Call log:
+  [2m- waiting for locator('input#name') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<msg time="2025-12-27T09:31:32.031464" level="INFO">${status} = FAIL</msg>
+<msg time="2025-12-27T09:31:32.031464" level="INFO">${msg} = TimeoutError: locator.waitFor: Timeout 500ms exceeded.
+Call log:
+  [2m- waiting for locator('input#name') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check...</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>visible</arg>
+<arg>timeout=500ms</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:31.404659" elapsed="0.626805"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="NOT RUN" start="2025-12-27T09:31:32.031464" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-12-27T09:31:32.031464" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:31:32.031464" elapsed="0.000000"/>
+</if>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:32.032500" level="INFO">Clicks the element 'css=button:has-text("New todo list")'.</msg>
+<arg>${BTN_NEW_TODO_LIST}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.031464" elapsed="0.036142"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:32.077216" level="INFO">Waited for Element with selector css=input#name at state visible</msg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.068193" elapsed="0.009905"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:31.403629" elapsed="0.674469"/>
+</kw>
+<arg>5x</arg>
+<arg>500ms</arg>
+<arg>Open New List Form</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:31:31.403629" elapsed="0.674469"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:32.079108" level="INFO">Fills the text 'List-1766820691' in the given field.</msg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.078098" elapsed="0.019554"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:32.098652" level="INFO">Fills the text 'My test list' in the given field.</msg>
+<arg>${FIELD_LIST_DESC}</arg>
+<arg>${desc}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.097652" elapsed="0.016233"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Create List Button" owner="app">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:32.122885" level="INFO">Waited for Element with selector css=:has(#name) button:has-text("Create") at state visible</msg>
+<arg>${BTN_CREATE_LIST}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.114921" elapsed="0.007964"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:32.124432" level="INFO">Clicks the element 'css=:has(#name) button:has-text("Create")'.</msg>
+<arg>${BTN_CREATE_LIST}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.122885" elapsed="0.109503"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:32.114921" elapsed="0.117467"/>
+</kw>
+<arg>10x</arg>
+<arg>500ms</arg>
+<arg>Click Create List Button</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.113885" elapsed="0.118503"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:32.275094" level="INFO">Waited for Element with selector css=a:has-text("List-1766820691") at state visible</msg>
+<arg>css=a:has-text("${name}")</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.232388" elapsed="0.042706"/>
+</kw>
+<arg>${list}</arg>
+<arg>My test list</arg>
+<status status="PASS" start="2025-12-27T09:31:31.403629" elapsed="0.871465"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:49.824221" elapsed="42.451877"/>
+</test>
+<test id="s1-s2-t2" name="Modify A Todo List Name And Description" line="17">
+<kw name="Ensure Logged Out" owner="app" type="SETUP">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:31:32.337095" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.289123" elapsed="0.047972"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:34.447037" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-11.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-11.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:31:34.447037" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:31:34.447037" level="FAIL">TimeoutError: locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="username"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-12-27T09:31:32.338094" elapsed="2.109991">TimeoutError: locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="username"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<msg time="2025-12-27T09:31:34.448085" level="INFO">${status} = FAIL</msg>
+<msg time="2025-12-27T09:31:34.449077" level="INFO">${msg} = TimeoutError: locator.waitFor: Timeout 2000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="username"]') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or...</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:32.338094" elapsed="2.110983"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="NOT RUN" start="2025-12-27T09:31:34.449077" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-12-27T09:31:34.449077" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:31:34.449077" elapsed="0.000000"/>
+</if>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:34.450075" level="FAIL">Variable '${BTN_LOGOUT}' not found.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:31:34.449077" elapsed="0.000998">Variable '${BTN_LOGOUT}' not found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.449077" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:34.451076" level="INFO">Clicks the element 'css=a[href="/login"]:has-text("Logout")'.</msg>
+<arg>${LINK_LOGOUT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.450075" elapsed="0.034963"/>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_LOGOUT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.450075" elapsed="0.034963"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:31:34.531267" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.485038" elapsed="0.047232"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:34.597971" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.532270" elapsed="0.065701"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:32.289123" elapsed="2.308848"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:31:34.599975" level="INFO">${ts} = 1766820694</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.599975" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:31:34.599975" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:31:34.600980" level="INFO">${u} = user-1766820694</msg>
+<var>${u}</var>
+<arg>user</arg>
+<status status="PASS" start="2025-12-27T09:31:34.598979" elapsed="0.002001"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-27T09:31:34.601982" level="INFO">${pw} = TestPass123!</msg>
+<var>${pw}</var>
+<arg>TestPass123!</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.601982" elapsed="0.000000"/>
+</kw>
+<kw name="Register User" owner="app">
+<kw name="Go To Register" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:34.604977" level="INFO">Clicks the element 'css=button:has-text("To Registration")'.</msg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.604977" elapsed="0.301789"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_TO_REGISTRATION}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.604977" elapsed="0.301789"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:31:34.907804" level="INFO">Clicks the element 'css=a[href="/register"]'.</msg>
+<msg time="2025-12-27T09:31:55.010649" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-12.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-12.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:31:55.010649" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:31:55.010649" level="FAIL">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  -   element is not stable[22m
+[2m  - retrying click action, attempt #1[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${LINK_REGISTER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:31:34.907804" elapsed="20.103883">TimeoutError: locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to &lt;a href="/register"&gt;here&lt;/a&gt;[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  -   element is not stable[22m
+[2m  - retrying click action, attempt #1[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Click</arg>
+<arg>${LINK_REGISTER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:34.906766" elapsed="20.104921"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:31:55.018647" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:31:55.012687" elapsed="0.005960"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:34.604009" elapsed="20.414638"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:55.019677" level="INFO">Fills the text 'user-1766820694' in the given field.</msg>
+<arg>${REG_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:55.018647" elapsed="0.014516"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:55.034159" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${REG_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:31:55.034159" elapsed="0.013595"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:31:55.048746" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<msg time="2025-12-27T09:32:15.179237" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-13.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-13.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:32:15.179237" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:32:15.179237" level="FAIL">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="FAIL" start="2025-12-27T09:31:55.047754" elapsed="20.132523">TimeoutError: locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<arg>Fill Text</arg>
+<arg>${REG_PASSWORD2}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:31:55.047754" elapsed="20.132523"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${REG_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.180277" elapsed="0.019958"/>
+</kw>
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:32:15.255286" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.200235" elapsed="0.056052"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:15.327949" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.256287" elapsed="0.072659"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:15.335956" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.328946" elapsed="0.008044"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:32:15.200235" elapsed="0.136755"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:31:34.603007" elapsed="40.733983"/>
+</kw>
+<kw name="Login" owner="app">
+<kw name="Go To Login" owner="app">
+<kw name="Go To" owner="Browser">
+<msg time="2025-12-27T09:32:15.385417" level="INFO">Successfully opened URL http://localhost/</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.338570" elapsed="0.047845"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:15.451151" level="INFO">Waited for Element with selector css=button:has-text("Login") at state visible</msg>
+<arg>${BTN_LOGIN}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.386415" elapsed="0.064736"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:15.460168" level="INFO">Waited for Element with selector css=input[name="username"] at state visible</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.452153" elapsed="0.008015"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:32:15.337953" elapsed="0.122215"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:32:15.461388" level="INFO">Fills the text 'user-1766820694' in the given field.</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.460168" elapsed="0.015193"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:32:15.476388" level="INFO">Fills the text 'TestPass123!' in the given field.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.475361" elapsed="0.016473"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:32:15.492865" level="INFO">Clicks the element 'css=button:has-text("Login")'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.492865" elapsed="0.312906"/>
+</kw>
+<arg>Click</arg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.492865" elapsed="0.312906"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.806770" elapsed="0.017519"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Should Be Logged In" owner="app">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:16.142142" level="INFO">Waited for Element with selector css=input[name="username"] at state detached</msg>
+<arg>${LOGIN_USERNAME}</arg>
+<arg>detached</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.825322" elapsed="0.316820"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:32:15.824289" elapsed="0.317853"/>
+</kw>
+<arg>15x</arg>
+<arg>1s</arg>
+<arg>Should Be Logged In</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:32:15.824289" elapsed="0.318889"/>
+</kw>
+<arg>${u}</arg>
+<arg>${pw}</arg>
+<status status="PASS" start="2025-12-27T09:32:15.336990" elapsed="0.806188"/>
+</kw>
+<kw name="Unique" owner="app">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-12-27T09:32:16.143798" level="INFO">${ts} = 1766820736</msg>
+<var>${ts}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.143798" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${prefix}-${ts}</value>
+<status status="PASS" start="2025-12-27T09:32:16.143798" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-27T09:32:16.144836" level="INFO">${list} = List-1766820736</msg>
+<var>${list}</var>
+<arg>List</arg>
+<status status="PASS" start="2025-12-27T09:32:16.143798" elapsed="0.001038"/>
+</kw>
+<kw name="Create List" owner="app">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Open New List Form" owner="app">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:16.747747" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-14.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-14.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-27T09:32:16.747747" level="INFO">See also file:///D:/JAMK/Software%20Testing/project/test/e2e-tests/results/playwright-log.txt for additional details.</msg>
+<msg time="2025-12-27T09:32:16.747747" level="FAIL">TimeoutError: locator.waitFor: Timeout 500ms exceeded.
+Call log:
+  [2m- waiting for locator('input#name') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</msg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>visible</arg>
+<arg>timeout=500ms</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-12-27T09:32:16.145836" elapsed="0.602875">TimeoutError: locator.waitFor: Timeout 500ms exceeded.
+Call log:
+  [2m- waiting for locator('input#name') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check your locator as the targeted element(s) couldn't be found.</status>
+</kw>
+<msg time="2025-12-27T09:32:16.748711" level="INFO">${status} = FAIL</msg>
+<msg time="2025-12-27T09:32:16.748711" level="INFO">${msg} = TimeoutError: locator.waitFor: Timeout 500ms exceeded.
+Call log:
+  [2m- waiting for locator('input#name') to be visible[22m
+
+Tip: Use "Set Browser Timeout" for increasing the timeout or double check...</msg>
+<var>${status}</var>
+<var>${msg}</var>
+<arg>Wait For Elements State</arg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>visible</arg>
+<arg>timeout=500ms</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.145836" elapsed="0.602875"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<return>
+<status status="NOT RUN" start="2025-12-27T09:32:16.749746" elapsed="0.000000"/>
+</return>
+<status status="NOT RUN" start="2025-12-27T09:32:16.748711" elapsed="0.001035"/>
+</branch>
+<status status="PASS" start="2025-12-27T09:32:16.748711" elapsed="0.001035"/>
+</if>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:32:16.749746" level="INFO">Clicks the element 'css=button:has-text("New todo list")'.</msg>
+<arg>${BTN_NEW_TODO_LIST}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.749746" elapsed="0.038004"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:16.793726" level="INFO">Waited for Element with selector css=input#name at state visible</msg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.787750" elapsed="0.005976"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:32:16.145836" elapsed="0.647890"/>
+</kw>
+<arg>5x</arg>
+<arg>500ms</arg>
+<arg>Open New List Form</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.144836" elapsed="0.648890"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:32:16.794710" level="INFO">Fills the text 'List-1766820736' in the given field.</msg>
+<arg>${FIELD_LIST_NAME}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.794710" elapsed="0.014006"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-27T09:32:16.809742" level="INFO">Fills the text 'Desc' in the given field.</msg>
+<arg>${FIELD_LIST_DESC}</arg>
+<arg>${desc}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.808716" elapsed="0.014995"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Create List Button" owner="app">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:16.831709" level="INFO">Waited for Element with selector css=:has(#name) button:has-text("Create") at state visible</msg>
+<arg>${BTN_CREATE_LIST}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.824710" elapsed="0.006999"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-27T09:32:16.832713" level="INFO">Clicks the element 'css=:has(#name) button:has-text("Create")'.</msg>
+<arg>${BTN_CREATE_LIST}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.831709" elapsed="0.046004"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:32:16.824710" elapsed="0.053003"/>
+</kw>
+<arg>10x</arg>
+<arg>500ms</arg>
+<arg>Click Create List Button</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.823711" elapsed="0.055001"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-12-27T09:32:16.925722" level="INFO">Waited for Element with selector css=a:has-text("List-1766820736") at state visible</msg>
+<arg>css=a:has-text("${name}")</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.878712" elapsed="0.047010"/>
+</kw>
+<arg>${list}</arg>
+<arg>Desc</arg>
+<status status="PASS" start="2025-12-27T09:32:16.144836" elapsed="0.780886"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:31:32.283093" elapsed="44.643656"/>
+</test>
+<kw name="Close App" owner="app" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-12-27T09:32:17.053713" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-27T09:32:16.934739" elapsed="0.118974"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:32:16.933710" elapsed="0.120003"/>
+</kw>
+<status status="PASS" start="2025-12-27T09:30:49.257450" elapsed="87.796263"/>
+</suite>
+<status status="PASS" start="2025-12-27T09:28:40.770288" elapsed="216.326328"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Auth &amp; Lists">Auth &amp; Lists</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Auth">Auth &amp; Lists.Auth</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Lists">Auth &amp; Lists.Lists</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
