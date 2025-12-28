@@ -17,6 +17,7 @@ python-jose = { extras = ["cryptography"], version = "^3.3.0" }
 asgi-lifespan = "^2.1.0"
 async-asgi-testclient = "^1.4.11"
 websockets = "^15.0"
+aiosqlite = "^0.22.1"
 
 
 [tool.poetry.group.dev.dependencies]

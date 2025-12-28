@@ -1,110 +1,38 @@
-{"level":30,"time":"2025-12-27T07:28:41.554Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Listening on 52307"}
-(node:13372) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+{"level":30,"time":"2025-12-28T16:06:01.471Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Listening on 49678"}
+(node:24920) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-{"level":30,"time":"2025-12-27T07:28:41.599Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:28:41.600Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:28:41.605Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newBrowser"}
-{"level":30,"time":"2025-12-27T07:28:41.819Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Adding browser to stack: chromium, version: 127.0.6533.17"}
-{"level":30,"time":"2025-12-27T07:28:41.820Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newBrowser"}
-{"level":30,"time":"2025-12-27T07:28:41.820Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Adding 0 contexts to browser"}
-{"level":30,"time":"2025-12-27T07:28:41.828Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newContext"}
-{"level":30,"time":"2025-12-27T07:28:41.829Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
-{"level":30,"time":"2025-12-27T07:28:41.829Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Trace file: "}
-{"level":30,"time":"2025-12-27T07:28:41.844Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Changed active context"}
-{"level":30,"time":"2025-12-27T07:28:41.845Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newContext"}
-{"level":30,"time":"2025-12-27T07:28:41.853Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newPage"}
-{"level":30,"time":"2025-12-27T07:28:41.854Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
-{"level":30,"time":"2025-12-27T07:28:41.978Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Video path: undefined"}
-{"level":30,"time":"2025-12-27T07:28:41.979Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Changed active page"}
-{"level":30,"time":"2025-12-27T07:28:42.091Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newPage"}
-{"level":30,"time":"2025-12-27T07:28:42.123Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:28:42.124Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:28:42.218Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:28:42.224Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:28:42.233Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:28:42.239Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:28:42.293Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:28:42.298Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:28:42.298Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:28:42.353Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:28:42.364Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:28:42.364Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
-{"level":30,"time":"2025-12-27T07:28:42.656Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:28:42.662Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:28:42.662Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:02.679Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
-================= Original suppressed error =================
-locator.click: Timeout 20000ms exceeded.
-Call log:
-  [2m- waiting for locator('a[href="/register"]')[22m
-[2m  -   locator resolved to <a href="/register">here</a>[22m
-[2m  - attempting click action[22m
-[2m  -   waiting for element to be visible, enabled and stable[22m
-[2m  -   element is not stable[22m
-[2m  - retrying click action, attempt #1[22m
-[2m  -   waiting for element to be visible, enabled and stable[22m
-[2m  - element was detached from the DOM, retrying[22m
-
-    at internalClick (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:9755:19)
-    at async click (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:9736:18)
-    at async PlaywrightServer.click (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:10691:28) {
-  name: 'TimeoutError'
-}
-=============================================================
-{"level":30,"time":"2025-12-27T07:29:02.710Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:29:02.711Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:29:02.788Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:29:02.795Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:02.795Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:02.800Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:02.803Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:02.803Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:02.820Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:02.824Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:02.825Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:02.840Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:02.860Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:02.860Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:22.866Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
-================= Original suppressed error =================
-locator.fill: Timeout 20000ms exceeded.
-Call log:
-  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
-
-    at fillText (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:9712:17)
-    at async PlaywrightServer.fillText (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:10691:28) {
-  name: 'TimeoutError'
-}
-=============================================================
-{"level":30,"time":"2025-12-27T07:29:22.903Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:29:22.903Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-2.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:29:22.986Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:29:22.992Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:29:22.992Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:23.009Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:29:23.014Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:29:23.058Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:29:23.066Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:23.066Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:29:23.128Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:23.133Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:23.134Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:23.138Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:23.144Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:29:23.146Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:29:23.149Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:29:23.152Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:29:23.155Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:29:23.204Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:29:23.209Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:23.209Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:23.242Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:23.251Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:29:23.251Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
-{"level":30,"time":"2025-12-27T07:29:23.590Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:29:23.595Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:29:23.595Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:43.597Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
+{"level":30,"time":"2025-12-28T16:06:01.570Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:01.571Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:01.577Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-12-28T16:06:01.760Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Adding browser to stack: chromium, version: 127.0.6533.17"}
+{"level":30,"time":"2025-12-28T16:06:01.761Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-12-28T16:06:01.760Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-12-28T16:06:01.769Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newContext"}
+{"level":30,"time":"2025-12-28T16:06:01.769Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-12-28T16:06:01.770Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Trace file: "}
+{"level":30,"time":"2025-12-28T16:06:01.783Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Changed active context"}
+{"level":30,"time":"2025-12-28T16:06:01.783Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newContext"}
+{"level":30,"time":"2025-12-28T16:06:01.791Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-12-28T16:06:01.792Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-12-28T16:06:01.914Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Video path: undefined"}
+{"level":30,"time":"2025-12-28T16:06:01.914Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Changed active page"}
+{"level":30,"time":"2025-12-28T16:06:02.029Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newPage"}
+{"level":30,"time":"2025-12-28T16:06:02.049Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:02.050Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:02.143Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:02.149Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:02.157Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:02.163Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:06:02.206Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:06:02.216Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:02.216Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:02.279Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:02.288Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:06:02.288Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
+{"level":30,"time":"2025-12-28T16:06:02.604Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:06:02.611Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:06:02.611Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:22.615Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
 ================= Original suppressed error =================
 locator.click: Timeout 20000ms exceeded.
 Call log:
@@ -120,21 +48,21 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:29:43.627Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:29:43.627Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-3.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:29:43.699Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:29:43.703Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:43.703Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:43.708Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:29:43.712Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:43.712Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:43.725Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:43.727Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:43.728Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:29:43.739Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:43.743Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:29:43.743Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:03.745Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
+{"level":30,"time":"2025-12-28T16:06:22.647Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:06:22.648Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:06:22.722Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:06:22.730Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:22.730Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:22.734Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:22.738Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:06:22.738Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:22.755Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:06:22.759Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:06:22.759Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:22.775Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:06:22.795Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:06:22.795Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:42.811Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
 ================= Original suppressed error =================
 locator.fill: Timeout 20000ms exceeded.
 Call log:
@@ -145,55 +73,124 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:30:03.773Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:03.773Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-4.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:30:03.848Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:03.853Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:30:03.853Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:03.867Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:30:03.872Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:03.912Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:03.919Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:03.920Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:30:03.981Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:03.983Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:03.984Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:03.988Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:03.994Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:04.035Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:04.042Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.042Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:30:04.096Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.100Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.100Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:04.105Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.110Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:04.110Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:04.122Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:04.126Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:04.126Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:04.138Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:04.142Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:04.142Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:30:04.456Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:30:04.461Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:30:04.461Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:04.476Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:30:04.480Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.481Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:04.704Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.709Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.709Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
-{"level":30,"time":"2025-12-27T07:30:04.719Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.727Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:04.729Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:04.734Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:04.736Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:04.742Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:04.787Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:04.793Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:04.794Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:06.807Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:42.838Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:06:42.838Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-2.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:06:42.930Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:06:42.937Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:06:42.937Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:42.953Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:06:42.957Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:06:43.023Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:06:43.028Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:43.028Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:06:43.065Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:43.069Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:43.070Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:43.075Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:43.086Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:43.090Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:43.094Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:43.097Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:06:43.101Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:06:43.148Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:06:43.157Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:43.157Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:06:43.217Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:06:43.228Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:06:43.228Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
+{"level":30,"time":"2025-12-28T16:06:43.554Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:06:43.561Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:06:43.561Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:03.565Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
+================= Original suppressed error =================
+locator.click: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('a[href="/register"]')[22m
+[2m  -   locator resolved to <a href="/register">here</a>[22m
+[2m  - attempting click action[22m
+[2m  -   waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+    at internalClick (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:9755:19)
+    at async click (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:9736:18)
+    at async PlaywrightServer.click (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:10691:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2025-12-28T16:07:03.591Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:03.591Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-3.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:07:03.666Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:03.670Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:03.670Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:03.674Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:03.677Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:03.677Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:03.686Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:03.688Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:03.688Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:03.700Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:03.703Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:03.703Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:23.715Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
+================= Original suppressed error =================
+locator.fill: Timeout 20000ms exceeded.
+Call log:
+  [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
+
+    at fillText (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:9712:17)
+    at async PlaywrightServer.fillText (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:10691:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2025-12-28T16:07:23.749Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:23.749Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-4.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:07:23.841Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:23.847Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:07:23.847Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:23.861Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:07:23.866Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:23.922Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:23.927Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:23.927Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:07:23.981Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:23.984Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:23.984Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:23.990Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:23.996Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:24.038Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:24.044Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.044Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:07:24.102Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.108Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.108Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:24.115Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.120Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:24.120Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:24.134Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:24.140Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:24.140Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:24.166Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:24.171Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:07:24.171Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:07:24.496Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:07:24.503Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:07:24.503Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:24.525Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:07:24.530Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.530Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:24.846Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.850Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.850Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
+{"level":30,"time":"2025-12-28T16:07:24.854Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.861Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:07:24.863Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:07:24.867Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:07:24.869Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:07:24.872Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:24.923Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:24.929Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:24.929Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:26.934Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
 ================= Original suppressed error =================
 locator.waitFor: Timeout 2000ms exceeded.
 Call log:
@@ -204,23 +201,23 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:30:06.849Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:06.850Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-5.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:30:06.912Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:06.918Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:06.918Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
-{"level":30,"time":"2025-12-27T07:30:06.961Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:30:06.964Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:07.004Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:07.010Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:07.010Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:07.078Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:07.088Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:07.088Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
-{"level":30,"time":"2025-12-27T07:30:07.380Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:30:07.386Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:07.386Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:27.400Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
+{"level":30,"time":"2025-12-28T16:07:26.962Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:26.962Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-5.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:07:27.020Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:27.027Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:07:27.027Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
+{"level":30,"time":"2025-12-28T16:07:27.061Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:07:27.065Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:27.110Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:07:27.117Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:27.117Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:27.190Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:27.199Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:07:27.199Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
+{"level":30,"time":"2025-12-28T16:07:27.469Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:07:27.474Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:07:27.474Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:47.479Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
 ================= Original suppressed error =================
 locator.click: Timeout 20000ms exceeded.
 Call log:
@@ -236,22 +233,22 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:30:27.427Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:27.427Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-6.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:30:27.496Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:27.500Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:27.500Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:27.505Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:27.508Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:27.508Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:27.520Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:27.523Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:27.523Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:27.534Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:27.539Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:27.539Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:47.520Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:47.520Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-6.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:07:47.616Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:07:47.620Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:47.620Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:47.624Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:07:47.628Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:47.628Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:47.639Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:47.643Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:47.643Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:07:47.652Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:47.656Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:07:47.657Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:07.661Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
 ================= Original suppressed error =================
-{"level":30,"time":"2025-12-27T07:30:47.554Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
 locator.fill: Timeout 20000ms exceeded.
 Call log:
   [2m- waiting for locator('input[name="passwordConfirmation"]')[22m
@@ -261,56 +258,56 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:30:47.578Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:47.578Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-7.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:30:47.644Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:30:47.649Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:30:47.649Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:47.663Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:30:47.667Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:47.717Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:47.725Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.725Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:30:47.779Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.781Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.781Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:47.787Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.793Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:47.833Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:47.839Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.840Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:30:47.896Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.898Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.899Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:47.902Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:47.906Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:47.906Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:47.919Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:47.923Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:47.923Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:47.933Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:30:47.938Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:47.938Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:30:48.241Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:30:48.245Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:30:48.245Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:48.261Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:30:48.266Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:48.266Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:48.486Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:48.491Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:48.491Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
-{"level":30,"time":"2025-12-27T07:30:49.001Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:30:49.005Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:49.047Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:49.056Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:49.056Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:49.112Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:49.117Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.119Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.127Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method closeBrowser"}
-{"level":30,"time":"2025-12-27T07:30:49.134Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Removed page=202577cd-0c2b-4d9f-9a33-c52b0292e838 from context=af3246b5-3506-4cbd-b536-51778aafd5e0 page stack"}
-{"level":30,"time":"2025-12-27T07:30:49.227Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method closeBrowser"}
+{"level":30,"time":"2025-12-28T16:08:07.691Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:07.691Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-7.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:08:07.781Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:07.786Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:08:07.786Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:07.798Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:08:07.802Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:07.853Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:07.860Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:07.860Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:08:07.923Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:07.927Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:07.927Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:07.931Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:07.936Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:07.983Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:07.988Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:07.989Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:08:08.048Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:08.051Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:08.051Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:08.055Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:08.059Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:08.059Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:08.073Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:08.079Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:08.079Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:08.096Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:08.100Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:08.100Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:08:08.432Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:08.436Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:08:08.436Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:08.451Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:08:08.455Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:08.455Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:08.663Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:08.667Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:08.667Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
+{"level":30,"time":"2025-12-28T16:08:09.191Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:09.194Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:09.234Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:09.241Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:09.241Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:09.306Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:09.313Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:09.315Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:09.319Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-12-28T16:08:09.327Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Removed page=d4ce83e8-bbd9-4bc1-b6a1-4c56ea3bbc0d from context=8aa68cc2-2259-4843-bcc4-37e4cecfd0df page stack"}
+{"level":30,"time":"2025-12-28T16:08:09.423Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method closeBrowser"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:10062:15)
@@ -324,49 +321,46 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1696:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 =============================================================
-{"level":30,"time":"2025-12-27T07:30:49.255Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.255Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.263Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.263Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.265Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newBrowser"}
-{"level":30,"time":"2025-12-27T07:30:49.473Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Adding browser to stack: chromium, version: 127.0.6533.17"}
-{"level":30,"time":"2025-12-27T07:30:49.473Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newBrowser"}
-{"level":30,"time":"2025-12-27T07:30:49.473Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Adding 0 contexts to browser"}
-{"level":30,"time":"2025-12-27T07:30:49.479Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newContext"}
-{"level":30,"time":"2025-12-27T07:30:49.479Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
-{"level":30,"time":"2025-12-27T07:30:49.479Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Trace file: "}
-{"level":30,"time":"2025-12-27T07:30:49.488Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Changed active context"}
-{"level":30,"time":"2025-12-27T07:30:49.488Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newContext"}
-{"level":30,"time":"2025-12-27T07:30:49.492Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newPage"}
-{"level":30,"time":"2025-12-27T07:30:49.493Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
-{"level":30,"time":"2025-12-27T07:30:49.612Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Video path: undefined"}
-{"level":30,"time":"2025-12-27T07:30:49.612Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Changed active page"}
-{"level":30,"time":"2025-12-27T07:30:49.709Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newPage"}
-{"level":30,"time":"2025-12-27T07:30:49.723Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:49.724Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:49.823Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:49.827Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.829Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:30:49.834Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:49.881Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:30:49.886Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:49.886Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:30:49.944Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:30:49.951Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:49.951Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
-{"level":30,"time":"2025-12-27T07:30:50.232Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:30:50.236Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:30:50.236Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:10.241Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
+{"level":30,"time":"2025-12-28T16:08:09.451Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:09.451Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:09.464Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:09.464Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:09.468Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-12-28T16:08:09.644Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Adding browser to stack: chromium, version: 127.0.6533.17"}
+{"level":30,"time":"2025-12-28T16:08:09.644Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-12-28T16:08:09.644Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-12-28T16:08:09.649Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newContext"}
+{"level":30,"time":"2025-12-28T16:08:09.650Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-12-28T16:08:09.650Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Trace file: "}
+{"level":30,"time":"2025-12-28T16:08:09.658Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Changed active context"}
+{"level":30,"time":"2025-12-28T16:08:09.658Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newContext"}
+{"level":30,"time":"2025-12-28T16:08:09.664Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-12-28T16:08:09.664Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-12-28T16:08:09.795Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Video path: undefined"}
+{"level":30,"time":"2025-12-28T16:08:09.795Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Changed active page"}
+{"level":30,"time":"2025-12-28T16:08:09.925Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method newPage"}
+{"level":30,"time":"2025-12-28T16:08:09.943Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:09.943Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:10.031Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:10.035Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:10.039Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:10.043Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:10.096Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:10.101Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:10.101Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:10.162Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:10.174Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:10.174Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
+{"level":30,"time":"2025-12-28T16:08:10.519Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:10.527Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:10.527Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:30.535Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
 ================= Original suppressed error =================
 locator.click: Timeout 20000ms exceeded.
 Call log:
   [2m- waiting for locator('a[href="/register"]')[22m
 [2m  -   locator resolved to <a href="/register">here</a>[22m
 [2m  - attempting click action[22m
-[2m  -   waiting for element to be visible, enabled and stable[22m
-[2m  -   element is not stable[22m
-[2m  - retrying click action, attempt #1[22m
 [2m  -   waiting for element to be visible, enabled and stable[22m
 [2m  - element was detached from the DOM, retrying[22m
 
@@ -376,21 +370,21 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:31:10.265Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:10.265Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-8.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:31:10.351Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:10.355Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:10.355Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:10.359Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:10.362Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:10.362Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:10.375Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:10.378Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:10.378Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:10.394Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:10.397Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:10.397Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:30.405Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
+{"level":30,"time":"2025-12-28T16:08:30.572Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:30.572Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-8.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:08:30.649Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:30.653Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:30.653Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:30.657Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:30.659Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:30.659Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:30.670Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:30.674Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:30.674Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:30.688Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:30.692Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:30.692Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:50.698Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
 ================= Original suppressed error =================
 locator.fill: Timeout 20000ms exceeded.
 Call log:
@@ -401,47 +395,47 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:31:30.435Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:30.435Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-9.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:31:30.521Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:30.527Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:31:30.527Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:30.540Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:31:30.546Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:30.592Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:30.599Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.599Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:31:30.661Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.664Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.664Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:30.669Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.676Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:30.720Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:30.727Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.727Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:31:30.776Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.781Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.781Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:30.786Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:30.790Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:30.790Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:30.802Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:30.806Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:30.806Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:30.816Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:30.820Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:31:30.820Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:31:31.149Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:31:31.158Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:31:31.158Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:31.177Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:31:31.181Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:31.181Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:31.399Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:31.407Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:31.407Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:08:50.726Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:50.726Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-9.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:08:50.798Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:50.802Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:08:50.802Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:50.816Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:08:50.822Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:50.870Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:50.876Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:50.876Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:08:50.931Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:50.934Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:50.934Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:50.940Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:50.946Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:50.989Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:50.996Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:50.996Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:08:51.056Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:51.059Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:51.059Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:51.064Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:51.067Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:51.067Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:51.078Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:51.084Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:51.085Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:51.104Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:51.113Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:51.113Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:08:51.420Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:51.426Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:08:51.426Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:51.439Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:08:51.443Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:51.443Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:51.656Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:51.663Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:51.663Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:08:52.171Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
 ================= Original suppressed error =================
-{"level":30,"time":"2025-12-27T07:31:31.922Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
 locator.waitFor: Timeout 500ms exceeded.
 Call log:
   [2m- waiting for locator('input#name') to be visible[22m
@@ -451,39 +445,39 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:31:31.958Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:31.958Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-10.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:31:32.029Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:32.033Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:31:32.033Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"New todo list\") in page."}
-{"level":30,"time":"2025-12-27T07:31:32.066Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:31:32.071Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.071Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
-{"level":30,"time":"2025-12-27T07:31:32.076Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.082Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:32.082Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
-{"level":30,"time":"2025-12-27T07:31:32.096Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:32.100Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:32.100Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=textarea#description in page."}
-{"level":30,"time":"2025-12-27T07:31:32.113Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:32.116Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.116Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
-{"level":30,"time":"2025-12-27T07:31:32.122Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.125Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:31:32.126Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
-{"level":30,"time":"2025-12-27T07:31:32.231Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:31:32.235Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.235Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a:has-text(\"List-1766820691\") in page."}
-{"level":30,"time":"2025-12-27T07:31:32.274Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.278Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:31:32.281Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:31:32.285Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:31:32.288Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:31:32.291Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:32.336Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:32.344Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:32.344Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:34.350Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.208Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:52.208Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-10.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:08:52.275Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:52.280Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:52.280Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"New todo list\") in page."}
+{"level":30,"time":"2025-12-28T16:08:52.332Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:52.335Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.335Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:08:52.340Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.344Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:52.344Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:08:52.355Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:52.358Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:52.358Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=textarea#description in page."}
+{"level":30,"time":"2025-12-28T16:08:52.370Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:08:52.373Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.373Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
+{"level":30,"time":"2025-12-28T16:08:52.378Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.381Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:52.381Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
+{"level":30,"time":"2025-12-28T16:08:52.480Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:52.484Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.484Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a:has-text(\"List-1766938131\") in page."}
+{"level":30,"time":"2025-12-28T16:08:52.516Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.522Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:52.524Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:52.527Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:52.528Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:08:52.532Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:52.576Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:52.584Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:52.584Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:54.592Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
 ================= Original suppressed error =================
 locator.waitFor: Timeout 2000ms exceeded.
 Call log:
@@ -494,32 +488,29 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:31:34.378Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:34.378Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-11.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:31:34.446Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:34.452Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:31:34.452Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
-{"level":30,"time":"2025-12-27T07:31:34.484Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:31:34.487Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:34.530Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:31:34.538Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:34.538Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:34.596Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:34.607Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:31:34.607Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
-{"level":30,"time":"2025-12-27T07:31:34.906Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:31:34.909Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:31:34.909Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:54.912Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
+{"level":30,"time":"2025-12-28T16:08:54.640Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:54.640Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-11.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:08:54.729Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:08:54.737Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:54.737Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/login\"]:has-text(\"Logout\") in page."}
+{"level":30,"time":"2025-12-28T16:08:54.772Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:54.776Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:54.822Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:08:54.828Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:54.828Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:08:54.900Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:08:54.909Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:54.909Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"To Registration\") in page."}
+{"level":30,"time":"2025-12-28T16:08:55.182Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:08:55.187Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:08:55.187Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a[href=\"/register\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:15.200Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  click"}
 ================= Original suppressed error =================
 locator.click: Timeout 20000ms exceeded.
 Call log:
   [2m- waiting for locator('a[href="/register"]')[22m
 [2m  -   locator resolved to <a href="/register">here</a>[22m
 [2m  - attempting click action[22m
-[2m  -   waiting for element to be visible, enabled and stable[22m
-[2m  -   element is not stable[22m
-[2m  - retrying click action, attempt #1[22m
 [2m  -   waiting for element to be visible, enabled and stable[22m
 [2m  - element was detached from the DOM, retrying[22m
 
@@ -529,21 +520,21 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:31:54.942Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:54.942Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-12.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:31:55.008Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:31:55.013Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:55.013Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:55.017Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:31:55.019Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:55.020Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:55.031Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:55.035Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:55.035Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:31:55.046Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:55.049Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:31:55.049Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.054Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
+{"level":30,"time":"2025-12-28T16:09:15.240Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:09:15.240Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-12.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:09:15.375Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:09:15.380Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:15.380Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:15.384Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:15.388Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:15.388Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:15.406Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:15.411Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:15.411Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:15.421Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:15.424Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:15.424Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"passwordConfirmation\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:35.437Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  fillText"}
 ================= Original suppressed error =================
 locator.fill: Timeout 20000ms exceeded.
 Call log:
@@ -554,46 +545,46 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:32:15.098Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:32:15.099Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-13.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:32:15.177Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:32:15.182Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:32:15.182Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.198Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:32:15.202Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:32:15.254Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:32:15.260Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.260Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:32:15.326Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.329Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.330Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.335Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.340Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
-{"level":30,"time":"2025-12-27T07:32:15.383Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
-{"level":30,"time":"2025-12-27T07:32:15.392Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.392Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:32:15.450Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.453Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.453Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.458Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.462Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:15.462Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.473Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:15.476Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:15.476Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.490Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:15.495Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:32:15.495Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
-{"level":30,"time":"2025-12-27T07:32:15.804Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:32:15.808Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
-{"level":30,"time":"2025-12-27T07:32:15.808Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:15.823Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
-{"level":30,"time":"2025-12-27T07:32:15.826Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:15.826Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
-{"level":30,"time":"2025-12-27T07:32:16.141Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.147Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.147Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
-{"level":30,"time":"2025-12-27T07:32:16.655Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.472Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:09:35.472Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-13.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:09:35.556Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:09:35.561Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:09:35.561Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:35.576Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:09:35.581Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:09:35.638Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:09:35.646Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.646Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:09:35.710Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.713Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.713Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:35.719Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.724Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-12-28T16:09:35.769Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method goTo"}
+{"level":30,"time":"2025-12-28T16:09:35.776Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.776Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:09:35.847Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.851Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.851Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:35.856Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:35.860Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:35.860Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:35.873Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:35.875Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:35.875Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:35.887Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:35.891Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:09:35.892Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"Login\") in page."}
+{"level":30,"time":"2025-12-28T16:09:36.096Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:09:36.100Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method press"}
+{"level":30,"time":"2025-12-28T16:09:36.101Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"password\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:36.115Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method press"}
+{"level":30,"time":"2025-12-28T16:09:36.122Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:36.122Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input[name=\"username\"] in page."}
+{"level":30,"time":"2025-12-28T16:09:36.441Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:36.448Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:36.448Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:09:36.952Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Error of node method  waitForElementState"}
 ================= Original suppressed error =================
 locator.waitFor: Timeout 500ms exceeded.
 Call log:
@@ -604,35 +595,35 @@ Call log:
   name: 'TimeoutError'
 }
 =============================================================
-{"level":30,"time":"2025-12-27T07:32:16.683Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:32:16.683Z","pid":13372,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-14.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
-{"level":30,"time":"2025-12-27T07:32:16.745Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-12-27T07:32:16.750Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:32:16.750Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"New todo list\") in page."}
-{"level":30,"time":"2025-12-27T07:32:16.786Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:32:16.789Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.789Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
-{"level":30,"time":"2025-12-27T07:32:16.792Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.795Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:16.795Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
-{"level":30,"time":"2025-12-27T07:32:16.807Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:16.810Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:16.810Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=textarea#description in page."}
-{"level":30,"time":"2025-12-27T07:32:16.822Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
-{"level":30,"time":"2025-12-27T07:32:16.825Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.825Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
-{"level":30,"time":"2025-12-27T07:32:16.830Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.833Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
-{"level":30,"time":"2025-12-27T07:32:16.833Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
-{"level":30,"time":"2025-12-27T07:32:16.876Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
-{"level":30,"time":"2025-12-27T07:32:16.880Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.880Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a:has-text(\"List-1766820736\") in page."}
-{"level":30,"time":"2025-12-27T07:32:16.924Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
-{"level":30,"time":"2025-12-27T07:32:16.929Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:32:16.931Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:32:16.935Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method closeBrowser"}
-{"level":30,"time":"2025-12-27T07:32:16.938Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Removed page=c19bafb4-e882-4d04-aa1c-5a26836a83d6 from context=44c236f4-cb9d-4412-832b-da1383d3fa79 page stack"}
-{"level":30,"time":"2025-12-27T07:32:17.052Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method closeBrowser"}
+{"level":30,"time":"2025-12-28T16:09:36.981Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:09:36.981Z","pid":24920,"hostname":"LAPTOP-06DONFO0","Take screenshot with options: ":{"path":"D:\\JAMK\\Software Testing\\project\\test\\e2e-tests\\results\\browser\\screenshot\\fail-screenshot-14.png","fileType":"png","fullPage":false,"timeout":20000,"omitBackground":false}}
+{"level":30,"time":"2025-12-28T16:09:37.065Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-12-28T16:09:37.071Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:09:37.072Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=button:has-text(\"New todo list\") in page."}
+{"level":30,"time":"2025-12-28T16:09:37.118Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:09:37.122Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:37.122Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:09:37.128Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:37.131Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:37.131Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=input#name in page."}
+{"level":30,"time":"2025-12-28T16:09:37.143Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:37.147Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:37.147Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=textarea#description in page."}
+{"level":30,"time":"2025-12-28T16:09:37.166Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method fillText"}
+{"level":30,"time":"2025-12-28T16:09:37.172Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:37.172Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
+{"level":30,"time":"2025-12-28T16:09:37.179Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:37.184Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method click"}
+{"level":30,"time":"2025-12-28T16:09:37.185Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=:has(#name) button:has-text(\"Create\") in page."}
+{"level":30,"time":"2025-12-28T16:09:37.214Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method click"}
+{"level":30,"time":"2025-12-28T16:09:37.220Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:37.220Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Strict mode is enabled, find Locator with css=a:has-text(\"List-1766938176\") in page."}
+{"level":30,"time":"2025-12-28T16:09:37.260Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-12-28T16:09:37.268Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:09:37.271Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:09:37.276Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-12-28T16:09:37.281Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Removed page=308dcf47-22bb-4390-942c-b79cae804a34 from context=1bdfec97-fe10-425b-bacd-a19d3ac83dfa page stack"}
+{"level":30,"time":"2025-12-28T16:09:37.410Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method closeBrowser"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (D:\JAMK\Software Testing\project\.venv\Lib\site-packages\Browser\wrapper\index.js:10062:15)
@@ -646,7 +637,7 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1696:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 =============================================================
-{"level":30,"time":"2025-12-27T07:32:17.092Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:32:17.092Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-12-27T07:32:17.158Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method closeAllBrowsers"}
-{"level":30,"time":"2025-12-27T07:32:17.158Z","pid":13372,"hostname":"LAPTOP-06DONFO0","msg":"End of node method closeAllBrowsers"}
+{"level":30,"time":"2025-12-28T16:09:37.442Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:09:37.442Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-12-28T16:09:37.509Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-12-28T16:09:37.509Z","pid":24920,"hostname":"LAPTOP-06DONFO0","msg":"End of node method closeAllBrowsers"}

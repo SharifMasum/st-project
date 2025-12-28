@@ -11,6 +11,7 @@ Register To The Application
     Register User    ${u}    ${pw}
 
 Log In To The Application
+    [Tags]    smoke
     ${u}=    Unique    user
     ${pw}=   Set Variable    TestPass123!
     Register User    ${u}    ${pw}
@@ -19,6 +20,7 @@ Log In To The Application
     Run Keyword And Ignore Error    Wait For Elements State    ${LINK_LOGOUT}    visible
 
 Log Out From The Application
+    [Tags]    smoke
     ${u}=    Unique    user
     ${pw}=   Set Variable    TestPass123!
     Register User    ${u}    ${pw}
