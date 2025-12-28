@@ -1,20 +1,26 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    Collections
+Library    String
 
 *** Variables ***
-${BASE_URL}    http://localhost:3000    # change to your API host/port
-${API_PREFIX}  /api
+${BASE_URL}      http://localhost:4322
+${API_PREFIX}    /api
 
 *** Keywords ***
 Create API Session
     Create Session    api    ${BASE_URL}
 
-Set Json Headers
-    ${headers}=    Create Dictionary    Content-Type=application/json
-    [Return]    ${headers}
+Json Headers
+    ${h}=    Create Dictionary    Content-Type=application/json
+    RETURN    ${h}
 
-Set Auth Headers
-    [Arguments]    ${token}
-    ${headers}=    Create Dictionary    Content-Type=application/json    Authorization=Bearer ${token}
-    [Return]    ${headers}
+Auth Headers
+    [Arguments]    ${access_token}
+    # Most FastAPI JWT setups use Bearer tokens.
+    ${h}=    Create Dictionary    Content-Type=application/json    Authorization=Bearer ${access_token}
+    RETURN    ${h}
+
+New Random Username
+    ${rand}=    Generate Random String    10    [LETTERS][NUMBERS]
+    RETURN    user_${rand}

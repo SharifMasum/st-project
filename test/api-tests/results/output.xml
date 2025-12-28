@@ -1,0 +1,3180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.0 on win32)" generated="2025-12-28T14:16:40.284934" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="D:\JAMK\Software Testing\project\test\api-tests\tests">
+<suite id="s1-s1" name="Todo Items Api" source="D:\JAMK\Software Testing\project\test\api-tests\tests\todo_items_api.robot">
+<kw name="Create API Session" owner="common" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:40.422360" level="INFO">Creating Session using : alias=api, url=http://localhost:4322, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-12-28T14:16:40.422360" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:40.422360" elapsed="0.000992"/>
+</kw>
+<test id="s1-s1-t1" name="Create Update Delete Todo Item Happy Path" line="9">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:40.424352" level="INFO">${rand} = XdYF2UwddT</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.423352" elapsed="0.001000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:40.424352" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.424352" level="INFO">${username} = user_XdYF2UwddT</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:40.423352" elapsed="0.001000"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.425351" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.424352" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:40.425351" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.425351" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:40.424352" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.425351" level="INFO">${payload} = {'username': 'user_XdYF2UwddT', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.425351" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:40.651096" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_XdYF2UwddT", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:40.651096" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":144,"username":"user_XdYF2UwddT","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAwfQ.DfdO24gzRtLom_pLNjZCxI8mbbCPZ3BOQ-oCHj9t4u0"} 
+ </msg>
+<msg time="2025-12-28T14:16:40.652099" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.425351" elapsed="0.226748"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:40.652099" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.652099" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.424352" elapsed="0.227747"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.653129" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.652099" elapsed="0.001030"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.653129" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.653129" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:40.654128" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.654128" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:40.653129" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.654128" level="INFO">${payload} = {'username': 'user_XdYF2UwddT', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.654128" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:40.846307" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_XdYF2UwddT", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:40.846307" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":144,"username":"user_XdYF2UwddT","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAwfQ.DfdO24gzRtLom_pLNjZCxI8mbbCPZ3BOQ-oCHj9t4u0"} 
+ </msg>
+<msg time="2025-12-28T14:16:40.846307" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.654128" elapsed="0.192179"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:40.846307" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.846307" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.653129" elapsed="0.193178"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.847352" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.846307" elapsed="0.001045"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.848352" level="INFO">${json} = {'userId': 144, 'username': 'user_XdYF2UwddT', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVd...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.847352" elapsed="0.001000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:40.848352" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.848352" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:40.848352" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAwfQ.DfdO24gzRtLom_pLNjZCxI8mbbCPZ3BOQ-oCHj9t4u0</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.848352" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:40.848352" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.848352" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0</msg>
+<msg time="2025-12-28T14:16:40.848352" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAwfQ.DfdO24gzRtLom_pLNjZCxI8mbbCPZ3BOQ-oCHj9t4u0</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.847352" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:40.848352" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.849354" level="INFO">${username} = user_XdYF2UwddT</msg>
+<msg time="2025-12-28T14:16:40.849354" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0</msg>
+<msg time="2025-12-28T14:16:40.849354" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAwfQ.DfdO24gzRtLom_pLNjZCxI8mbbCPZ3BOQ-oCHj9t4u0</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:40.423352" elapsed="0.426002"/>
+</kw>
+<kw name="Create Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.850343" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdp...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.850343" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:40.850343" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.850343" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdp...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.850343" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.851343" level="INFO">${payload} = {'name': 'Items List', 'description': 'For items'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.850343" elapsed="0.001000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:40.867460" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0', 'Content-Length': '50'} 
+ body=b'{"name": "Items List", "description": "For items"}' 
+ </msg>
+<msg time="2025-12-28T14:16:40.867460" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '199', 'content-type': 'application/json'} 
+ body={"id":77,"name":"Items List","description":"For items","author":{"id":144,"username":"user_XdYF2UwddT"},"role":"owner","created":"2025-12-28T12:16:40.854057Z","updated":"2025-12-28T12:16:40.854057Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:40.867460" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.851343" elapsed="0.016117"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:40.867460" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.867460" level="INFO">${list_resp} = &lt;Response [200]&gt;</msg>
+<var>${list_resp}</var>
+<arg>${access}</arg>
+<arg>Items List</arg>
+<arg>For items</arg>
+<status status="PASS" start="2025-12-28T14:16:40.849354" elapsed="0.018106"/>
+</kw>
+<kw name="Extract Todo List Id" owner="todo_lists">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.869490" level="INFO">${json} = {'id': 77, 'name': 'Items List', 'description': 'For items', 'author': {'id': 144, 'username': 'user_XdYF2UwddT'}, 'role': 'owner', 'created': '2025-12-28T12:16:40.854057Z', 'updated': '2025-12-28T12:...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.868491" elapsed="0.000999"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:40.869490" level="INFO">${id} = 77</msg>
+<var>${id}</var>
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.869490" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${id}</value>
+<status status="PASS" start="2025-12-28T14:16:40.869490" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.869490" level="INFO">${list_id} = 77</msg>
+<var>${list_id}</var>
+<arg>${list_resp}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.868491" elapsed="0.000999"/>
+</kw>
+<kw name="Create Todo Item" owner="todo_items">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.871492" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdp...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.870465" elapsed="0.001027"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:40.871492" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.871492" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdp...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.870465" elapsed="0.001027"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.871492" level="INFO">${payload} = {'description': 'Buy milk'}</msg>
+<var>${payload}</var>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.871492" elapsed="0.000976"/>
+</kw>
+<if>
+<branch type="IF" condition="'${due_date}' != '${None}'">
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${payload}</arg>
+<arg>due_date=${due_date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2025-12-28T14:16:40.872468" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-12-28T14:16:40.872468" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-12-28T14:16:40.872468" elapsed="0.000000"/>
+</if>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:40.931523" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/77/todos 
+ path_url=/api/todo-lists/77/todos 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDQsInVzZXJuYW1lIjoidXNlcl9YZFlGMlV3ZGRUIiwiZXhwIjoxNzY3MDEwNjAwfQ._IsXbhUX4ueb3NAVdpLydvg528U6F21N2jclWiKxzt0', 'Content-Length': '27'} 
+ body=b'{"description": "Buy milk"}' 
+ </msg>
+<msg time="2025-12-28T14:16:40.931523" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/77/todos 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '181', 'content-type': 'application/json'} 
+ body={"id":8,"author_id":144,"todo_list_id":77,"description":"Buy milk","due_date":null,"completed":false,"created":"2025-12-28T12:16:40.923042Z","updated":"2025-12-28T12:16:40.923042Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:40.931523" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/${todo_list_id}/todos</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.872468" elapsed="0.059055"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:40.931523" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.931523" level="INFO">${create} = &lt;Response [200]&gt;</msg>
+<var>${create}</var>
+<arg>${access}</arg>
+<arg>${list_id}</arg>
+<arg>Buy milk</arg>
+<status status="PASS" start="2025-12-28T14:16:40.870465" elapsed="0.061058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>STATUS: ${create.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.932492" elapsed="0.001031"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>BODY: ${create.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.933523" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.935494" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${create.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.935494" elapsed="0.001031"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:40.423352" elapsed="0.513173"/>
+</test>
+<test id="s1-s1-t2" name="Create Todo Item Negative Missing Description Returns 422" line="19">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:40.939486" level="INFO">${rand} = eKeiRULFAH</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.939486" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:40.939486" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.939486" level="INFO">${username} = user_eKeiRULFAH</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:40.939486" elapsed="0.000000"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.941516" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.940513" elapsed="0.001003"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:40.941516" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:40.941516" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:40.940513" elapsed="0.001003"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:40.941516" level="INFO">${payload} = {'username': 'user_eKeiRULFAH', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.941516" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.187979" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_eKeiRULFAH", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.187979" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":145,"username":"user_eKeiRULFAH","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.187979" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:40.941516" elapsed="0.246463"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:41.187979" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.187979" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:40.940513" elapsed="0.247466"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.188943" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.187979" elapsed="0.000964"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.188943" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.188943" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.188943" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.189979" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:41.188943" elapsed="0.001036"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.189979" level="INFO">${payload} = {'username': 'user_eKeiRULFAH', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.189979" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.381927" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_eKeiRULFAH", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.381927" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":145,"username":"user_eKeiRULFAH","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.381927" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.189979" elapsed="0.191948"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:41.382965" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.382965" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.188943" elapsed="0.194022"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.382965" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.382965" elapsed="0.000000"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.383964" level="INFO">${json} = {'userId': 145, 'username': 'user_eKeiRULFAH', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdng...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.383964" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:41.383964" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.383964" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:41.383964" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.383964" elapsed="0.000998"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:41.384962" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.384962" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28</msg>
+<msg time="2025-12-28T14:16:41.384962" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.382965" elapsed="0.001997"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:41.384962" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.384962" level="INFO">${username} = user_eKeiRULFAH</msg>
+<msg time="2025-12-28T14:16:41.384962" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28</msg>
+<msg time="2025-12-28T14:16:41.384962" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:40.938486" elapsed="0.446476"/>
+</kw>
+<kw name="Create Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.386961" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngP...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.385927" elapsed="0.001034"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.386961" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.386961" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngP...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.385927" elapsed="0.001034"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.386961" level="INFO">${payload} = {'name': 'Negative Items', 'description': 'For items'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.386961" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.401508" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28', 'Content-Length': '54'} 
+ body=b'{"name": "Negative Items", "description": "For items"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.401508" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '203', 'content-type': 'application/json'} 
+ body={"id":78,"name":"Negative Items","description":"For items","author":{"id":145,"username":"user_eKeiRULFAH"},"role":"owner","created":"2025-12-28T12:16:41.390556Z","updated":"2025-12-28T12:16:41.390556Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.401508" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.386961" elapsed="0.014547"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:41.401508" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.401508" level="INFO">${list_resp} = &lt;Response [200]&gt;</msg>
+<var>${list_resp}</var>
+<arg>${access}</arg>
+<arg>Negative Items</arg>
+<arg>For items</arg>
+<status status="PASS" start="2025-12-28T14:16:41.385927" elapsed="0.015581"/>
+</kw>
+<kw name="Extract Todo List Id" owner="todo_lists">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.402477" level="INFO">${json} = {'id': 78, 'name': 'Negative Items', 'description': 'For items', 'author': {'id': 145, 'username': 'user_eKeiRULFAH'}, 'role': 'owner', 'created': '2025-12-28T12:16:41.390556Z', 'updated': '2025-12-28...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.402477" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:41.402477" level="INFO">${id} = 78</msg>
+<var>${id}</var>
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.402477" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${id}</value>
+<status status="PASS" start="2025-12-28T14:16:41.402477" elapsed="0.001030"/>
+</return>
+<msg time="2025-12-28T14:16:41.403507" level="INFO">${list_id} = 78</msg>
+<var>${list_id}</var>
+<arg>${list_resp}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.402477" elapsed="0.001030"/>
+</kw>
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.404510" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngP...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.403507" elapsed="0.001003"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.404510" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.404510" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngP...</msg>
+<var>${headers}</var>
+<arg>${access}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.403507" elapsed="0.001003"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.405478" level="INFO">${payload} = {'due_date': '2025-12-31'}</msg>
+<var>${payload}</var>
+<arg>due_date=2025-12-31</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.405478" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.461532" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/78/todos 
+ path_url=/api/todo-lists/78/todos 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDUsInVzZXJuYW1lIjoidXNlcl9lS2VpUlVMRkFIIiwiZXhwIjoxNzY3MDEwNjAxfQ.ZUQdapqYFYgHHWdngPHXh_DZ1AmacukFal9jOEEZq28', 'Content-Length': '26'} 
+ body=b'{"due_date": "2025-12-31"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.461532" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/78/todos 
+ status=422, reason=Unprocessable Entity 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '128', 'content-type': 'application/json'} 
+ body={"detail":"[{'type': 'missing', 'loc': ('body', 'description'), 'msg': 'Field required', 'input': {'due_date': '2025-12-31'}}]"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.461532" level="INFO">${resp} = &lt;Response [422]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/${list_id}/todos</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.406487" elapsed="0.055045"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.463567" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>422</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.462569" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:40.938486" elapsed="0.525081"/>
+</test>
+<status status="PASS" start="2025-12-28T14:16:40.307904" elapsed="1.157664"/>
+</suite>
+<suite id="s1-s2" name="Todo Lists Api" source="D:\JAMK\Software Testing\project\test\api-tests\tests\todo_lists_api.robot">
+<kw name="Create API Session" owner="common" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.471566" level="INFO">Creating Session using : alias=api, url=http://localhost:4322, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-12-28T14:16:41.471566" elapsed="0.001004"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:41.471566" elapsed="0.001004"/>
+</kw>
+<test id="s1-s2-t1" name="Create Todo List Happy Path" line="8">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:41.473568" level="INFO">${rand} = H79QbfDyCc</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.473568" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:41.473568" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.473568" level="INFO">${username} = user_H79QbfDyCc</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:41.472570" elapsed="0.000998"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.474573" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.474573" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.474573" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.474573" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:41.473568" elapsed="0.001005"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.474573" level="INFO">${payload} = {'username': 'user_H79QbfDyCc', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.474573" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.687929" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_H79QbfDyCc", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.688925" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":146,"username":"user_H79QbfDyCc","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgdFBZBvKGWtxawFmQhNjNI1prXM","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.688925" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.474573" elapsed="0.214352"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:41.688925" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.688925" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.473568" elapsed="0.215871"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.689439" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.689439" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.690451" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.690451" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.690451" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.691451" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:41.690451" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.691451" level="INFO">${payload} = {'username': 'user_H79QbfDyCc', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.691451" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.884964" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_H79QbfDyCc", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.884964" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":146,"username":"user_H79QbfDyCc","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgdFBZBvKGWtxawFmQhNjNI1prXM","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.884964" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.691451" elapsed="0.193513"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:41.884964" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.884964" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.690451" elapsed="0.194513"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.886004" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.884964" elapsed="0.001040"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${json} = {'userId': 146, 'username': 'user_H79QbfDyCc', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZg...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.886004" elapsed="0.001000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgdFBZBvKGWtxawFmQhNjNI1prXM</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.887004" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.887004" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:41.887004" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgdFBZBvKGWtxawFmQhNjNI1prXM</msg>
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.886004" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:41.887004" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${username} = user_H79QbfDyCc</msg>
+<msg time="2025-12-28T14:16:41.887004" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgdFBZBvKGWtxawFmQhNjNI1prXM</msg>
+<msg time="2025-12-28T14:16:41.887994" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAxfQ.xnrkdE4h5RdZGjcumh3hedM0obt2BHG8-882RaC3ICw</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:41.472570" elapsed="0.415424"/>
+</kw>
+<kw name="Create Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.888967" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgd...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.888967" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.888967" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.888967" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgd...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.888967" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.889993" level="INFO">${payload} = {'name': 'My List', 'description': 'Description'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.888967" elapsed="0.001026"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:41.904068" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDYsInVzZXJuYW1lIjoidXNlcl9INzlRYmZEeUNjIiwiZXhwIjoxNzY3MDEwNjAxfQ.wM-VM7KxSIoPdJLZgdFBZBvKGWtxawFmQhNjNI1prXM', 'Content-Length': '49'} 
+ body=b'{"name": "My List", "description": "Description"}' 
+ </msg>
+<msg time="2025-12-28T14:16:41.904068" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '198', 'content-type': 'application/json'} 
+ body={"id":79,"name":"My List","description":"Description","author":{"id":146,"username":"user_H79QbfDyCc"},"role":"owner","created":"2025-12-28T12:16:41.893119Z","updated":"2025-12-28T12:16:41.893119Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:41.904068" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.889993" elapsed="0.014075"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:41.904068" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.905095" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${access}</arg>
+<arg>My List</arg>
+<arg>Description</arg>
+<status status="PASS" start="2025-12-28T14:16:41.887994" elapsed="0.017101"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.906095" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.905095" elapsed="0.001000"/>
+</kw>
+<kw name="Extract Todo List Id" owner="todo_lists">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.907068" level="INFO">${json} = {'id': 79, 'name': 'My List', 'description': 'Description', 'author': {'id': 146, 'username': 'user_H79QbfDyCc'}, 'role': 'owner', 'created': '2025-12-28T12:16:41.893119Z', 'updated': '2025-12-28T12:1...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.907068" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:41.907068" level="INFO">${id} = 79</msg>
+<var>${id}</var>
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.907068" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${id}</value>
+<status status="PASS" start="2025-12-28T14:16:41.907068" elapsed="0.000997"/>
+</return>
+<msg time="2025-12-28T14:16:41.908065" level="INFO">${id} = 79</msg>
+<var>${id}</var>
+<arg>${resp}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.907068" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${id} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.908065" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:41.472570" elapsed="0.436497"/>
+</test>
+<test id="s1-s2-t2" name="Create Todo List Negative Missing Name Returns 422" line="15">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:41.912096" level="INFO">${rand} = inYxTO9Io8</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.911065" elapsed="0.001031"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:41.912096" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:41.912096" level="INFO">${username} = user_inYxTO9Io8</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:41.911065" elapsed="0.001031"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.912096" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.912096" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:41.912096" elapsed="0.000998"/>
+</return>
+<msg time="2025-12-28T14:16:41.913094" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:41.912096" elapsed="0.000998"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:41.913094" level="INFO">${payload} = {'username': 'user_inYxTO9Io8', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.913094" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.150936" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_inYxTO9Io8", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:42.150936" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":147,"username":"user_inYxTO9Io8","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOXk9ihxeYiP3mcEhmu7bL0zvgDI","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78"} 
+ </msg>
+<msg time="2025-12-28T14:16:42.150936" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:41.913094" elapsed="0.237842"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:42.150936" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.150936" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:41.912096" elapsed="0.238840"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.151977" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.150936" elapsed="0.001041"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.152977" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.151977" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.152977" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.152977" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:42.151977" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.152977" level="INFO">${payload} = {'username': 'user_inYxTO9Io8', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.152977" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.343609" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_inYxTO9Io8", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:42.343609" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:40 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":147,"username":"user_inYxTO9Io8","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOXk9ihxeYiP3mcEhmu7bL0zvgDI","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78"} 
+ </msg>
+<msg time="2025-12-28T14:16:42.343609" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.152977" elapsed="0.191690"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:42.344667" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.344667" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.151977" elapsed="0.192690"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.345651" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.344667" elapsed="0.000984"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.345651" level="INFO">${json} = {'userId': 147, 'username': 'user_inYxTO9Io8', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sO...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.345651" elapsed="0.000989"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOXk9ihxeYiP3mcEhmu7bL0zvgDI</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.346640" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.346640" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:42.346640" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOXk9ihxeYiP3mcEhmu7bL0zvgDI</msg>
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.345651" elapsed="0.000989"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:42.346640" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${username} = user_inYxTO9Io8</msg>
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOXk9ihxeYiP3mcEhmu7bL0zvgDI</msg>
+<msg time="2025-12-28T14:16:42.346640" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:41.911065" elapsed="0.435575"/>
+</kw>
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.347627" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOX...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.347627" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.347627" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.348640" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOX...</msg>
+<var>${headers}</var>
+<arg>${access}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.347627" elapsed="0.001013"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.348640" level="INFO">${payload} = {'description': 'No name'}</msg>
+<var>${payload}</var>
+<arg>description=No name</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.348640" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.354616" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDcsInVzZXJuYW1lIjoidXNlcl9pbll4VE85SW84IiwiZXhwIjoxNzY3MDEwNjAyfQ.qZNJNRWoFCtLTG-sOXk9ihxeYiP3mcEhmu7bL0zvgDI', 'Content-Length': '26'} 
+ body=b'{"description": "No name"}' 
+ </msg>
+<msg time="2025-12-28T14:16:42.355612" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=422, reason=Unprocessable Entity 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '121', 'content-type': 'application/json'} 
+ body={"detail":"[{'type': 'missing', 'loc': ('body', 'name'), 'msg': 'Field required', 'input': {'description': 'No name'}}]"} 
+ </msg>
+<msg time="2025-12-28T14:16:42.355612" level="INFO">${resp} = &lt;Response [422]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.349616" elapsed="0.005996"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.356611" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>422</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.355612" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:41.911065" elapsed="0.445546"/>
+</test>
+<test id="s1-s2-t3" name="Find Todo Lists Happy Path" line="22">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:42.359679" level="INFO">${rand} = v7egirS3DA</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.359679" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:42.359679" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.359679" level="INFO">${username} = user_v7egirS3DA</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:42.359679" elapsed="0.000000"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.360678" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.360678" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.360678" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.360678" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:42.360678" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.361678" level="INFO">${payload} = {'username': 'user_v7egirS3DA', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.361678" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.607850" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_v7egirS3DA", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:42.607850" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":148,"username":"user_v7egirS3DA","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78"} 
+ </msg>
+<msg time="2025-12-28T14:16:42.607850" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.361678" elapsed="0.246172"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:42.607850" elapsed="0.000996"/>
+</return>
+<msg time="2025-12-28T14:16:42.608846" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.359679" elapsed="0.249167"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.608846" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.608846" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.609845" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.609845" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.609845" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.609845" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:42.609845" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.610845" level="INFO">${payload} = {'username': 'user_v7egirS3DA', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.609845" elapsed="0.001000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.821005" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_v7egirS3DA", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:42.821005" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":148,"username":"user_v7egirS3DA","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78"} 
+ </msg>
+<msg time="2025-12-28T14:16:42.821005" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.610845" elapsed="0.210160"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:42.822005" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.822005" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.608846" elapsed="0.213159"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.822005" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.822005" elapsed="0.000000"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.823005" level="INFO">${json} = {'userId': 148, 'username': 'user_v7egirS3DA', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.823005" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:42.823005" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.823005" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:42.824005" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.823005" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:42.824005" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.824005" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA</msg>
+<msg time="2025-12-28T14:16:42.824005" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.822005" elapsed="0.002000"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:42.824005" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.824005" level="INFO">${username} = user_v7egirS3DA</msg>
+<msg time="2025-12-28T14:16:42.824005" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA</msg>
+<msg time="2025-12-28T14:16:42.824509" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAyfQ.3Qsow-W67At1U4-3YqTcXEhHDEI2_y8W2OWQfA2qp78</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:42.359679" elapsed="0.464830"/>
+</kw>
+<kw name="Create Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.825515" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.825515" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.825515" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.825515" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.824509" elapsed="0.001006"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.825515" level="INFO">${payload} = {'name': 'List A', 'description': 'Desc'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.825515" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.839517" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA', 'Content-Length': '41'} 
+ body=b'{"name": "List A", "description": "Desc"}' 
+ </msg>
+<msg time="2025-12-28T14:16:42.839517" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '190', 'content-type': 'application/json'} 
+ body={"id":80,"name":"List A","description":"Desc","author":{"id":148,"username":"user_v7egirS3DA"},"role":"owner","created":"2025-12-28T12:16:42.828986Z","updated":"2025-12-28T12:16:42.828986Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:42.839517" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.825515" elapsed="0.014002"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:42.839517" elapsed="0.000000"/>
+</return>
+<arg>${access}</arg>
+<arg>List A</arg>
+<arg>Desc</arg>
+<status status="PASS" start="2025-12-28T14:16:42.824509" elapsed="0.015008"/>
+</kw>
+<kw name="Find Todo Lists" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.841515" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.840516" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.841515" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.841515" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.840516" elapsed="0.000999"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:42.850589" level="INFO">GET Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDgsInVzZXJuYW1lIjoidXNlcl92N2VnaXJTM0RBIiwiZXhwIjoxNzY3MDEwNjAyfQ.bSFz5DCaTyt7phMbG9nATVGirBQViz1-YJIVoXl1aTA'} 
+ body=None 
+ </msg>
+<msg time="2025-12-28T14:16:42.850589" level="INFO">GET Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '192', 'content-type': 'application/json'} 
+ body=[{"id":80,"name":"List A","description":"Desc","author":{"id":148,"username":"user_v7egirS3DA"},"role":"owner","created":"2025-12-28T12:16:42.828986Z","updated":"2025-12-28T12:16:42.828986Z"}] 
+ </msg>
+<msg time="2025-12-28T14:16:42.850589" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.841515" elapsed="0.009074"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:42.850589" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.850589" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${access}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.840516" elapsed="0.010073"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.852550" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.851518" elapsed="0.001032"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:42.358673" elapsed="0.493877"/>
+</test>
+<test id="s1-s2-t4" name="Update Todo List Happy Path" line="28">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:42.855516" level="INFO">${rand} = VguVEHHcve</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.855516" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:42.855516" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.856516" level="INFO">${username} = user_VguVEHHcve</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:42.855516" elapsed="0.001000"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.856516" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.856516" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:42.856516" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:42.857516" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:42.856516" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:42.857516" level="INFO">${payload} = {'username': 'user_VguVEHHcve', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.857516" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.100793" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_VguVEHHcve", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.100793" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":149,"username":"user_VguVEHHcve","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.100793" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:42.857516" elapsed="0.243277"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.100793" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.101829" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:42.856516" elapsed="0.245313"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.101829" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.101829" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.102828" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.102828" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.102828" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.102828" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:43.102828" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.103830" level="INFO">${payload} = {'username': 'user_VguVEHHcve', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.102828" elapsed="0.001002"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.291066" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_VguVEHHcve", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.291066" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":149,"username":"user_VguVEHHcve","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.291066" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.103830" elapsed="0.187236"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.291066" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.291066" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.101829" elapsed="0.189237"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.291066" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.291066" elapsed="0.000000"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.292604" level="INFO">${json} = {'userId': 149, 'username': 'user_VguVEHHcve', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDm...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.292604" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:43.292604" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.292604" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:43.292604" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.292604" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:43.292604" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.293641" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8</msg>
+<msg time="2025-12-28T14:16:43.293641" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.291066" elapsed="0.002575"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:43.293641" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.293641" level="INFO">${username} = user_VguVEHHcve</msg>
+<msg time="2025-12-28T14:16:43.293641" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8</msg>
+<msg time="2025-12-28T14:16:43.293641" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:42.855516" elapsed="0.438125"/>
+</kw>
+<kw name="Create Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.294613" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmi...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.294613" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.294613" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.294613" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmi...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.294613" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.295641" level="INFO">${payload} = {'name': 'Old Name', 'description': 'Old Desc'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.295641" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.310227" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8', 'Content-Length': '47'} 
+ body=b'{"name": "Old Name", "description": "Old Desc"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.310227" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '196', 'content-type': 'application/json'} 
+ body={"id":81,"name":"Old Name","description":"Old Desc","author":{"id":149,"username":"user_VguVEHHcve"},"role":"owner","created":"2025-12-28T12:16:43.298496Z","updated":"2025-12-28T12:16:43.298496Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.310227" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.295641" elapsed="0.014586"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.310227" elapsed="0.001027"/>
+</return>
+<msg time="2025-12-28T14:16:43.311254" level="INFO">${create} = &lt;Response [200]&gt;</msg>
+<var>${create}</var>
+<arg>${access}</arg>
+<arg>Old Name</arg>
+<arg>Old Desc</arg>
+<status status="PASS" start="2025-12-28T14:16:43.294613" elapsed="0.016641"/>
+</kw>
+<kw name="Extract Todo List Id" owner="todo_lists">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.312254" level="INFO">${json} = {'id': 81, 'name': 'Old Name', 'description': 'Old Desc', 'author': {'id': 149, 'username': 'user_VguVEHHcve'}, 'role': 'owner', 'created': '2025-12-28T12:16:43.298496Z', 'updated': '2025-12-28T12:16:...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.312254" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:43.312254" level="INFO">${id} = 81</msg>
+<var>${id}</var>
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.312254" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${id}</value>
+<status status="PASS" start="2025-12-28T14:16:43.312254" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.312254" level="INFO">${list_id} = 81</msg>
+<var>${list_id}</var>
+<arg>${create}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.311254" elapsed="0.001000"/>
+</kw>
+<kw name="Update Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.314322" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmi...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.313303" elapsed="0.001019"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.314322" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.314322" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmi...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.313303" elapsed="0.001019"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.314322" level="INFO">${payload} = {'name': 'New Name', 'description': 'New Desc'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.314322" elapsed="0.000000"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.370936" level="INFO">PUT Request : url=http://localhost:4322/api/todo-lists/81 
+ path_url=/api/todo-lists/81 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNDksInVzZXJuYW1lIjoidXNlcl9WZ3VWRUhIY3ZlIiwiZXhwIjoxNzY3MDEwNjAzfQ.8DvAMVYh_AuqgREDmihxr8efeo2zV8U7AM4g5ypLEV8', 'Content-Length': '47'} 
+ body=b'{"name": "New Name", "description": "New Desc"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.370936" level="INFO">PUT Response : url=http://localhost:4322/api/todo-lists/81 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '148', 'content-type': 'application/json'} 
+ body={"id":81,"author_id":149,"name":"New Name","description":"New Desc","created":"2025-12-28T12:16:43.298496Z","updated":"2025-12-28T12:16:43.298496Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.370936" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/${todo_list_id}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.314322" elapsed="0.056614"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.370936" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.370936" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${access}</arg>
+<arg>${list_id}</arg>
+<arg>New Name</arg>
+<arg>New Desc</arg>
+<status status="PASS" start="2025-12-28T14:16:43.313303" elapsed="0.057633"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.371896" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.371896" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:42.854519" elapsed="0.518415"/>
+</test>
+<test id="s1-s2-t5" name="Update Todo List Negative Missing Body Returns 422" line="35">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:43.375925" level="INFO">${rand} = mzeq3UXQ3N</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.375925" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:43.375925" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.375925" level="INFO">${username} = user_mzeq3UXQ3N</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:43.374934" elapsed="0.000991"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.376921" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.376921" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.376921" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.376921" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:43.376921" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.377924" level="INFO">${payload} = {'username': 'user_mzeq3UXQ3N', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.376921" elapsed="0.001003"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.622717" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_mzeq3UXQ3N", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.622717" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":150,"username":"user_mzeq3UXQ3N","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.622717" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.377924" elapsed="0.244793"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.622717" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.623753" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.375925" elapsed="0.247828"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.623753" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.623753" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.624750" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.624750" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.624750" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.624750" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:43.624750" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.624750" level="INFO">${payload} = {'username': 'user_mzeq3UXQ3N', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.624750" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.837805" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_mzeq3UXQ3N", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.837805" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":150,"username":"user_mzeq3UXQ3N","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.837805" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.624750" elapsed="0.214047"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.838797" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.838797" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.623753" elapsed="0.215044"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.839801" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.838797" elapsed="0.001004"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.839801" level="INFO">${json} = {'userId': 150, 'username': 'user_mzeq3UXQ3N', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z6...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.839801" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.839801" elapsed="0.001002"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.840803" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:43.840803" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI</msg>
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.839801" elapsed="0.001002"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:43.840803" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${username} = user_mzeq3UXQ3N</msg>
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI</msg>
+<msg time="2025-12-28T14:16:43.840803" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjAzfQ.bPndCzT3SWo_eXjdjkLhyBZkJjobf1m4QomN5E_DU9U</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:43.374934" elapsed="0.465869"/>
+</kw>
+<kw name="Create Todo List" owner="todo_lists">
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.842800" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.842800" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.842800" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.842800" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69...</msg>
+<var>${headers}</var>
+<arg>${access_token}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.841802" elapsed="0.000998"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.842800" level="INFO">${payload} = {'name': 'Temp', 'description': 'Temp'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>description=${description}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.842800" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.859271" level="INFO">POST Request : url=http://localhost:4322/api/todo-lists/ 
+ path_url=/api/todo-lists/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI', 'Content-Length': '39'} 
+ body=b'{"name": "Temp", "description": "Temp"}' 
+ </msg>
+<msg time="2025-12-28T14:16:43.859894" level="INFO">POST Response : url=http://localhost:4322/api/todo-lists/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '188', 'content-type': 'application/json'} 
+ body={"id":82,"name":"Temp","description":"Temp","author":{"id":150,"username":"user_mzeq3UXQ3N"},"role":"owner","created":"2025-12-28T12:16:43.846636Z","updated":"2025-12-28T12:16:43.846636Z"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.859894" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.842800" elapsed="0.017094"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:43.859894" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.859894" level="INFO">${create} = &lt;Response [200]&gt;</msg>
+<var>${create}</var>
+<arg>${access}</arg>
+<arg>Temp</arg>
+<arg>Temp</arg>
+<status status="PASS" start="2025-12-28T14:16:43.841802" elapsed="0.018092"/>
+</kw>
+<kw name="Extract Todo List Id" owner="todo_lists">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.861250" level="INFO">${json} = {'id': 82, 'name': 'Temp', 'description': 'Temp', 'author': {'id': 150, 'username': 'user_mzeq3UXQ3N'}, 'role': 'owner', 'created': '2025-12-28T12:16:43.846636Z', 'updated': '2025-12-28T12:16:43.84663...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.861250" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:43.861931" level="INFO">${id} = 82</msg>
+<var>${id}</var>
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.861250" elapsed="0.000681"/>
+</kw>
+<return>
+<value>${id}</value>
+<status status="PASS" start="2025-12-28T14:16:43.861931" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.861931" level="INFO">${list_id} = 82</msg>
+<var>${list_id}</var>
+<arg>${create}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.860504" elapsed="0.001427"/>
+</kw>
+<kw name="Auth Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.862501" level="INFO">${h} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69...</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${access_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.862501" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.862501" elapsed="0.000683"/>
+</return>
+<msg time="2025-12-28T14:16:43.863184" level="INFO">${headers} = {'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69...</msg>
+<var>${headers}</var>
+<arg>${access}</arg>
+<status status="PASS" start="2025-12-28T14:16:43.862501" elapsed="0.000683"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.868190" level="INFO">PUT Request : url=http://localhost:4322/api/todo-lists/82 
+ path_url=/api/todo-lists/82 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsInVzZXJuYW1lIjoidXNlcl9temVxM1VYUTNOIiwiZXhwIjoxNzY3MDEwNjAzfQ.Y9DSY2ZOx2_h7j3z69Vm81SnU8NxZCgx8hzZhFBR6yI', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-12-28T14:16:43.868190" level="INFO">PUT Response : url=http://localhost:4322/api/todo-lists/82 
+ status=422, reason=Unprocessable Entity 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '92', 'content-type': 'application/json'} 
+ body={"detail":"[{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]"} 
+ </msg>
+<msg time="2025-12-28T14:16:43.868190" level="INFO">${resp} = &lt;Response [422]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/todo-lists/${list_id}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.863184" elapsed="0.006006"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.869190" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>422</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.869190" elapsed="0.001042"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:43.373903" elapsed="0.496329"/>
+</test>
+<status status="PASS" start="2025-12-28T14:16:41.466528" elapsed="2.405669"/>
+</suite>
+<suite id="s1-s3" name="Users Api" source="D:\JAMK\Software Testing\project\test\api-tests\tests\users_api.robot">
+<kw name="Create API Session" owner="common" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:43.882811" level="INFO">Creating Session using : alias=api, url=http://localhost:4322, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-12-28T14:16:43.881810" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:43.881810" elapsed="0.001001"/>
+</kw>
+<test id="s1-s3-t1" name="Register Happy Path" line="7">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:43.883811" level="INFO">${rand} = 3CNjWC6vr6</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.883811" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:43.883811" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.883811" level="INFO">${username} = user_3CNjWC6vr6</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:43.883811" elapsed="0.000000"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.885808" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.885808" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:43.885808" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:43.885808" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:43.884809" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:43.885808" level="INFO">${payload} = {'username': 'user_3CNjWC6vr6', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.885808" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:44.090541" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_3CNjWC6vr6", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:44.090541" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":151,"username":"user_3CNjWC6vr6","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTEsInVzZXJuYW1lIjoidXNlcl8zQ05qV0M2dnI2IiwiZXhwIjoxNzY3MDEwNjA0fQ.lAjoXnZXtAierUhL7W6D_Eqz_1N8w853Z6G-aeYkr54","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA0fQ.EAKtppPSXkbTUTkNP2WHZ3obKygE41RSKKX3rCSELQA"} 
+ </msg>
+<msg time="2025-12-28T14:16:44.090541" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:43.885808" elapsed="0.204733"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:44.090541" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.090541" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${username}</arg>
+<arg>Secret123!</arg>
+<status status="PASS" start="2025-12-28T14:16:43.884809" elapsed="0.205732"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.091564" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.091564" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.092543" level="INFO">${json} = {'userId': 151, 'username': 'user_3CNjWC6vr6', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTEsInVzZXJuYW1lIjoidXNlcl8zQ05qV0M2dnI2IiwiZXhwIjoxNzY3MDEwNjA0fQ.lAjoXnZXtAierUhL7...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.092543" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.093543" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.093543" elapsed="0.001035"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:43.882811" elapsed="0.211767"/>
+</test>
+<test id="s1-s3-t2" name="RRegister Negative Missing Password Returns 422" line="15">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.096559" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.096559" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:44.096559" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.096559" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:44.096559" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.097542" level="INFO">${payload} = {'username': 'someone'}</msg>
+<var>${payload}</var>
+<arg>username=someone</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.097542" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:44.103541" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '23'} 
+ body=b'{"username": "someone"}' 
+ </msg>
+<msg time="2025-12-28T14:16:44.103541" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=422, reason=Unprocessable Entity 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '122', 'content-type': 'application/json'} 
+ body={"detail":"[{'type': 'missing', 'loc': ('body', 'password'), 'msg': 'Field required', 'input': {'username': 'someone'}}]"} 
+ </msg>
+<msg time="2025-12-28T14:16:44.103541" level="INFO">${resp} = &lt;Response [422]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.098537" elapsed="0.005004"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.104575" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>422</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.103541" elapsed="0.001034"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:44.095537" elapsed="0.010001"/>
+</test>
+<test id="s1-s3-t3" name="Login Happy Path" line="21">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:44.107580" level="INFO">${rand} = Rw4ehVNwpN</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.107580" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:44.107580" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.107580" level="INFO">${username} = user_Rw4ehVNwpN</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:44.106537" elapsed="0.001043"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.108537" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.108537" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:44.108537" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.108537" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:44.108537" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.109564" level="INFO">${payload} = {'username': 'user_Rw4ehVNwpN', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.108537" elapsed="0.001027"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:44.400754" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_Rw4ehVNwpN", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:44.400754" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":152,"username":"user_Rw4ehVNwpN","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTIsInVzZXJuYW1lIjoidXNlcl9SdzRlaFZOd3BOIiwiZXhwIjoxNzY3MDEwNjA0fQ.lGXqgn1gRNX4pV8PbqvOzPFL2cKmyd8F4ruB_gPzVAc","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA0fQ.EAKtppPSXkbTUTkNP2WHZ3obKygE41RSKKX3rCSELQA"} 
+ </msg>
+<msg time="2025-12-28T14:16:44.400754" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.109564" elapsed="0.291190"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:44.400754" elapsed="0.000000"/>
+</return>
+<arg>${username}</arg>
+<arg>Secret123!</arg>
+<status status="PASS" start="2025-12-28T14:16:44.108537" elapsed="0.292217"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.402755" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.402755" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:44.402755" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.402755" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:44.401756" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.402755" level="INFO">${payload} = {'username': 'user_Rw4ehVNwpN', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.402755" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:44.620095" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_Rw4ehVNwpN", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:44.620095" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:42 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":152,"username":"user_Rw4ehVNwpN","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTIsInVzZXJuYW1lIjoidXNlcl9SdzRlaFZOd3BOIiwiZXhwIjoxNzY3MDEwNjA0fQ.lGXqgn1gRNX4pV8PbqvOzPFL2cKmyd8F4ruB_gPzVAc","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA0fQ.EAKtppPSXkbTUTkNP2WHZ3obKygE41RSKKX3rCSELQA"} 
+ </msg>
+<msg time="2025-12-28T14:16:44.620095" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.403756" elapsed="0.216339"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:44.620095" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.621096" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${username}</arg>
+<arg>Secret123!</arg>
+<status status="PASS" start="2025-12-28T14:16:44.401756" elapsed="0.219340"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.622098" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.621096" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.623117" level="INFO">${json} = {'userId': 152, 'username': 'user_Rw4ehVNwpN', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTIsInVzZXJuYW1lIjoidXNlcl9SdzRlaFZOd3BOIiwiZXhwIjoxNzY3MDEwNjA0fQ.lGXqgn1gRNX4pV8Pb...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.623117" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.624097" elapsed="0.000547"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:44.106537" elapsed="0.518107"/>
+</test>
+<test id="s1-s3-t4" name="Login Negative Missing Body Returns 422" line="29">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.626692" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.626692" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:44.626692" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.626692" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:44.626692" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:44.632693" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-12-28T14:16:44.632693" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=422, reason=Unprocessable Entity 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '92', 'content-type': 'application/json'} 
+ body={"detail":"[{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]"} 
+ </msg>
+<msg time="2025-12-28T14:16:44.632693" level="INFO">${resp} = &lt;Response [422]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.626692" elapsed="0.006001"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.633695" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>422</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.633695" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:44.625687" elapsed="0.009005"/>
+</test>
+<test id="s1-s3-t5" name="Refresh Token Happy Path" line="34">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:44.636692" level="INFO">${rand} = 7jg7JEjgmW</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.636692" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:44.636692" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.636692" level="INFO">${username} = user_7jg7JEjgmW</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:44.636692" elapsed="0.000000"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.637692" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.637692" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:44.637692" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.637692" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:44.637692" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.638693" level="INFO">${payload} = {'username': 'user_7jg7JEjgmW', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.638693" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:44.943042" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_7jg7JEjgmW", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:44.943042" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":153,"username":"user_7jg7JEjgmW","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA0fQ.8fZj5fyt863Gg5JePDd1UG3k1dElZr_Nu0AdMu2lAPU","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA0fQ.EAKtppPSXkbTUTkNP2WHZ3obKygE41RSKKX3rCSELQA"} 
+ </msg>
+<msg time="2025-12-28T14:16:44.943042" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.638693" elapsed="0.304349"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:44.943042" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.943042" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:44.637692" elapsed="0.305350"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.944054" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.944054" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.945055" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.945055" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:44.945055" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:44.945055" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:44.944054" elapsed="0.001001"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:44.945055" level="INFO">${payload} = {'username': 'user_7jg7JEjgmW', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.945055" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:45.153968" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_7jg7JEjgmW", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:45.153968" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":153,"username":"user_7jg7JEjgmW","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0"} 
+ </msg>
+<msg time="2025-12-28T14:16:45.153968" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:44.945055" elapsed="0.208913"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:45.153968" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.153968" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:44.944054" elapsed="0.209914"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.155505" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.153968" elapsed="0.001537"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.155505" level="INFO">${json} = {'userId': 153, 'username': 'user_7jg7JEjgmW', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-B...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.155505" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.155505" elapsed="0.001037"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.156542" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:45.156542" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0</msg>
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:45.155505" elapsed="0.001037"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:45.156542" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${username} = user_7jg7JEjgmW</msg>
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0</msg>
+<msg time="2025-12-28T14:16:45.156542" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:44.636692" elapsed="0.519850"/>
+</kw>
+<kw name="Refresh Token" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.158543" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.158543" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:45.158543" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.158543" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:45.157516" elapsed="0.001027"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.158543" level="INFO">${payload} = {'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0', 'refreshToken': '...</msg>
+<var>${payload}</var>
+<arg>accessToken=${access_token}</arg>
+<arg>refreshToken=${refresh_token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.158543" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:45.164514" level="INFO">POST Request : url=http://localhost:4322/api/users/refresh-token 
+ path_url=/api/users/refresh-token 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '337'} 
+ body=b'{"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0", "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0"}' 
+ </msg>
+<msg time="2025-12-28T14:16:45.164514" level="INFO">POST Response : url=http://localhost:4322/api/users/refresh-token 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":153,"username":"user_7jg7JEjgmW","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTMsInVzZXJuYW1lIjoidXNlcl83amc3SkVqZ21XIiwiZXhwIjoxNzY3MDEwNjA1fQ.7vv_lnUAR0e7Ggl-ByfSumWYAJfVaanVQkQpkpcUlL0","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0"} 
+ </msg>
+<msg time="2025-12-28T14:16:45.164514" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/refresh-token</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.158543" elapsed="0.005971"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:45.164514" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.165550" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${access}</arg>
+<arg>${refresh}</arg>
+<status status="PASS" start="2025-12-28T14:16:45.157516" elapsed="0.008034"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.166549" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.165550" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:44.635692" elapsed="0.530857"/>
+</test>
+<test id="s1-s3-t6" name="Refresh Token Negative Missing RefreshToken Returns 422" line="39">
+<kw name="Ensure Logged In User" owner="users">
+<kw name="New Random Username" owner="common">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-12-28T14:16:45.169522" level="INFO">${rand} = w8fFufBy5Y</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.169522" elapsed="0.000000"/>
+</kw>
+<return>
+<value>user_${rand}</value>
+<status status="PASS" start="2025-12-28T14:16:45.169522" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.169522" level="INFO">${username} = user_w8fFufBy5Y</msg>
+<var>${username}</var>
+<status status="PASS" start="2025-12-28T14:16:45.168513" elapsed="0.001009"/>
+</kw>
+<kw name="Register" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.170552" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.169522" elapsed="0.001030"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:45.170552" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.170552" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:45.169522" elapsed="0.001030"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.170552" level="INFO">${payload} = {'username': 'user_w8fFufBy5Y', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.170552" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:45.440442" level="INFO">POST Request : url=http://localhost:4322/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_w8fFufBy5Y", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:45.440442" level="INFO">POST Response : url=http://localhost:4322/api/users/ 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":154,"username":"user_w8fFufBy5Y","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0"} 
+ </msg>
+<msg time="2025-12-28T14:16:45.440442" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.170552" elapsed="0.269890"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:45.440442" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.440442" level="INFO">${reg} = &lt;Response [200]&gt;</msg>
+<var>${reg}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:45.169522" elapsed="0.270920"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.441484" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${reg.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.440442" elapsed="0.001042"/>
+</kw>
+<kw name="Login" owner="users">
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.442480" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.441484" elapsed="0.000996"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:45.442480" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.442480" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:45.441484" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.442480" level="INFO">${payload} = {'username': 'user_w8fFufBy5Y', 'password': 'Secret123!'}</msg>
+<var>${payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.442480" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:45.629331" level="INFO">POST Request : url=http://localhost:4322/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '57'} 
+ body=b'{"username": "user_w8fFufBy5Y", "password": "Secret123!"}' 
+ </msg>
+<msg time="2025-12-28T14:16:45.629331" level="INFO">POST Response : url=http://localhost:4322/api/users/login 
+ status=200, reason=OK 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '376', 'content-type': 'application/json'} 
+ body={"userId":154,"username":"user_w8fFufBy5Y","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0"} 
+ </msg>
+<msg time="2025-12-28T14:16:45.629331" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/login</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.442480" elapsed="0.186851"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-12-28T14:16:45.629331" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.629331" level="INFO">${login} = &lt;Response [200]&gt;</msg>
+<var>${login}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-12-28T14:16:45.441484" elapsed="0.187847"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.630360" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${login.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.629331" elapsed="0.001029"/>
+</kw>
+<kw name="Extract Tokens" owner="users">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.631941" level="INFO">${json} = {'userId': 154, 'username': 'user_w8fFufBy5Y', 'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUY...</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.630360" elapsed="0.001581"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:45.631941" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o</msg>
+<var>${access}</var>
+<arg>${json}</arg>
+<arg>accessToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.631941" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-12-28T14:16:45.632948" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0</msg>
+<var>${refresh}</var>
+<arg>${json}</arg>
+<arg>refreshToken</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.631941" elapsed="0.001007"/>
+</kw>
+<return>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:45.632948" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.632948" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o</msg>
+<msg time="2025-12-28T14:16:45.632948" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0</msg>
+<var>${access}</var>
+<var>${refresh}</var>
+<arg>${login}</arg>
+<status status="PASS" start="2025-12-28T14:16:45.630360" elapsed="0.002588"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${access}</value>
+<value>${refresh}</value>
+<status status="PASS" start="2025-12-28T14:16:45.632948" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.633952" level="INFO">${username} = user_w8fFufBy5Y</msg>
+<msg time="2025-12-28T14:16:45.633952" level="INFO">${access} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o</msg>
+<msg time="2025-12-28T14:16:45.633952" level="INFO">${refresh} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyZWZyZXNoX3Rva2VuIiwiZXhwIjoxNzY5NTE2MjA1fQ.pdJYvkjdPxCia85ORKiO317Oqb6kV8Z6mrXLjN8ClF0</msg>
+<var>${username}</var>
+<var>${access}</var>
+<var>${refresh}</var>
+<status status="PASS" start="2025-12-28T14:16:45.168513" elapsed="0.465439"/>
+</kw>
+<kw name="Json Headers" owner="common">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.634951" level="INFO">${h} = {'Content-Type': 'application/json'}</msg>
+<var>${h}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.634951" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${h}</value>
+<status status="PASS" start="2025-12-28T14:16:45.634951" elapsed="0.000000"/>
+</return>
+<msg time="2025-12-28T14:16:45.634951" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2025-12-28T14:16:45.634951" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.636458" level="INFO">${payload} = {'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o'}</msg>
+<var>${payload}</var>
+<arg>accessToken=${access}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.636458" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-12-28T14:16:45.643465" level="INFO">POST Request : url=http://localhost:4322/api/users/refresh-token 
+ path_url=/api/users/refresh-token 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '182'} 
+ body=b'{"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o"}' 
+ </msg>
+<msg time="2025-12-28T14:16:45.643465" level="INFO">POST Response : url=http://localhost:4322/api/users/refresh-token 
+ status=422, reason=Unprocessable Entity 
+ headers={'date': 'Sun, 28 Dec 2025 12:16:44 GMT', 'server': 'uvicorn', 'content-length': '285', 'content-type': 'application/json'} 
+ body={"detail":"[{'type': 'missing', 'loc': ('body', 'refreshToken'), 'msg': 'Field required', 'input': {'accessToken': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTQsInVzZXJuYW1lIjoidXNlcl93OGZGdWZCeTVZIiwiZXhwIjoxNzY3MDEwNjA1fQ.t0JhMvyN1g4rHNOUYDo25ah1hqY2leka1ulViyUCC8o'}}]"} 
+ </msg>
+<msg time="2025-12-28T14:16:45.643465" level="INFO">${resp} = &lt;Response [422]&gt;</msg>
+<var>${resp}</var>
+<arg>api</arg>
+<arg>${API_PREFIX}/users/refresh-token</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.637466" elapsed="0.005999"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-28T14:16:45.645465" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>422</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-28T14:16:45.644476" elapsed="0.000989"/>
+</kw>
+<status status="PASS" start="2025-12-28T14:16:45.168513" elapsed="0.476952"/>
+</test>
+<status status="PASS" start="2025-12-28T14:16:43.874189" elapsed="1.773277"/>
+</suite>
+<status status="PASS" start="2025-12-28T14:16:40.286903" elapsed="5.362563"/>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="13" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Todo Items Api">Tests.Todo Items Api</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s2" name="Todo Lists Api">Tests.Todo Lists Api</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s3" name="Users Api">Tests.Users Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
